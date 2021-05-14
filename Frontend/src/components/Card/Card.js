@@ -80,7 +80,7 @@ class Card extends Component {
 // ~~~~~~~~~~~ARCHIVED
         if (task.status === "archived") {
             return (
-                <div className="card_wrapper">
+                <div className="card_wrapper archived_card_wrapper">
                 <div className="image_wrapper">
                 {/* Прописать условие выбора картинки по категории */}
                 <img src={Cleaning} alt="Cleaning" height="80px" />

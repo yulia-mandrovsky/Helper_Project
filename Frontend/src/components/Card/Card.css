@@ -87,7 +87,7 @@
 
 .re_button {
     background: #007AFF;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 
 .ongoing_card_wrapper {
@@ -165,4 +165,8 @@
     line-height: 16px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.archived_card_wrapper {
+    height: 180px;
 }

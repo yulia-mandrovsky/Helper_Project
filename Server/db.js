@@ -1,6 +1,6 @@
 const mysql = require('mysql');
-const fs=require('fs');
-const data=JSON.parse(fs.readFileSync('tasks.json', 'utf8'));
+// const fs=require('fs');
+// const data=JSON.parse(fs.readFileSync('tasks.json', 'utf8'));
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -16,17 +16,20 @@ connection.connect((err) => {
   }
   else {
   console.log(error)
-}
-// const values = data.map((task) => {
-//     return [task.description, task.due, task.employee, task.finished ]
-//   })
+}})
 
-connection.query(`DELETE FROM tasks
-WHERE finished_date > due_date;`, (err, data) => {
-  if (!err) {
-    console.log(data);
-  }
-});
+module.exports = connection;
+
+// // const values = data.map((task) => {
+// //     return [task.description, task.due, task.employee, task.finished ]
+// //   })
+
+// connection.query(`DELETE FROM tasks
+// WHERE finished_date > due_date;`, (err, data) => {
+//   if (!err) {
+//     console.log(data);
+//   }
+// });
 
 //   connection.query(`UPDATE tasks
 // SET finished_date = due_date
@@ -62,7 +65,7 @@ WHERE finished_date > due_date;`, (err, data) => {
 //     console.log(data);
 //   }
 // });
-});
+// });
 
 // const { name, amount, card, date} = client;
 
