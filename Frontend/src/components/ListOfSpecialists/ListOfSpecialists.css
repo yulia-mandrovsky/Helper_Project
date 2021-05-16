@@ -23,39 +23,39 @@ html {
     box-sizing: border-box;
 }
 
-.title {
-
+.select {
+    margin-left: 5%;
+    width: 90%;
+    border: none;
+    padding-top: 10px;
+    align-items: center;
 }
 
-.select-wrapper {
+.price_input {
+    height: 56px;
     width: 90%;
-    height: 50px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 16px;
     background-color: #FFFFFF;
     border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-}
-
-.select_block {
-    width: 33.33%;
-    height: 100%;
-    color: #8F9BB3;
+    border: none;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    line-height: 20px;
+    line-height: 18px;
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 
-.active {
-    background-color: #007AFF;
+
+.apply_button {
+    height: 56px;
+    width: 60%;
+    margin-top: 30px;
+    background: #007AFF;
     color: #FFFFFF;
-}
-
-.select_border {
-    border-right: 1px solid lightgray
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
 }

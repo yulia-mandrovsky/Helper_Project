@@ -9,8 +9,7 @@ import TasksFilter from './components/tasks_filter/TasksFilter';
 import MyTasks from './components/MyTasks/MyTasks';
 import AddTask from './components/AddTask/AddTask';
 import ChoicePageUser from './components/ChoicePageUser/ChoicePageUser';
-import SpecialistsFilter from './components/SpecialistsFilter/SpecialistsFilter';
-import ListOfSpecialists from './components/ListOfSpecialists/ListOfSpecialists'
+import SpecialistsFilter from './components/ListOfSpecialists/ListOfSpecialists';
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
       <Route path="/sign-up">
         <RegistrationFirst />
       </Route>
-      <Route path="/sign-up-performers">
+      <Route path="/sign-up-helper">
         <RegistrationSecond />
       </Route>
       <Route path="/home">
@@ -36,13 +35,10 @@ function App() {
       <Route path="/add-task">
         <AddTask />
       </Route>
-      <Route path="/specialists-filter">
+      <Route path="/specialists-list">
         <SpecialistsFilter />
       </Route>
-      <Route path="/specialists-list">
-        <ListOfSpecialists />
-      </Route>
-      <Route path="/orders-filter">
+      <Route path="/tasks-filter">
         <TasksFilter />
       </Route>
       <Route path="/my-tasks">

@@ -21,7 +21,7 @@ class Card extends Component {
                         <h2 className="card_title">{task.name}</h2>
                     </div>
                     <div className="card_row">
-                        <p>Categorie</p><p>{task.categorie}</p>
+                        <p>Category</p><p>{task.categorie}</p>
                     </div>
                     <div className="card_row">
                         <p>City</p><p>{task.city}</p>
@@ -80,7 +80,7 @@ class Card extends Component {
 // ~~~~~~~~~~~ARCHIVED
         if (task.status === "archived") {
             return (
-                <div className="card_wrapper archived_card_wrapper">
+                <div className="archived_card_wrapper">
                 <div className="image_wrapper">
                 {/* Прописать условие выбора картинки по категории */}
                 <img src={Cleaning} alt="Cleaning" height="80px" />
@@ -97,7 +97,7 @@ class Card extends Component {
                         <p>Total Price</p><p>{task.price}</p>
                     </div>
                     <div className="card_row button_row">
-                        <button className="card_button re_button">Re-booking</button>
+                        <button className="re_button">Re-booking</button>
                     </div>
                 </div>
             </div>

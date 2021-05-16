@@ -16,10 +16,10 @@ class SpecialistSmallCard extends Component {
                         <h2 className="card_title">{specialist.name}</h2>
                     </div>
                     <div className="card_row">
-                        <p>Categorie</p><p>{specialist.categorie}</p>
+                        <p>Category</p><p>{specialist.categorie}</p>
                     </div>
                     <div className="card_row">
-                        <p>City</p><p>{specialist.city}</p>
+                        <p>Desirable locations</p><p>{specialist.city}</p>
                     </div>
                     <div className="card_row">
                         <p>Price Per Hour</p><p>{specialist.PricePerHour}</p>
