@@ -31,10 +31,26 @@ class Entrance extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        // fetch()
-        console.log(this.state)
-        window.location ="/home";
-    }
+        const body = {email: `${this.state.email}`, password: `${this.state.password}`}
+        fetch('http://localhost:2121/users', {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(body),
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((data)=> {
+            console.log("i'm on entrance")
+            localStorage.setItem('token', data.token)
+            if (data.token) {
+                this.props.history.push("/home");
+            }
+        
+    })
+}
 
     render() {
         return (

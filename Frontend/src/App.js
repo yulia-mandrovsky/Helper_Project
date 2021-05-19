@@ -14,36 +14,16 @@ import SpecialistsFilter from './components/ListOfSpecialists/ListOfSpecialists'
 function App() {
   return (
     <div className="App">
-      <Route path="/start">
-        <Description />
-      </Route>
-      <Route path="/sign-in">
-        <Entrance />
-      </Route>
-      <Route path="/sign-up">
-        <RegistrationFirst />
-      </Route>
-      <Route path="/sign-up-helper">
-        <RegistrationSecond />
-      </Route>
-      <Route path="/home">
-        <Main />
-      </Route>
-      <Route path="/user-choice">
-        <ChoicePageUser />
-      </Route>
-      <Route path="/add-task">
-        <AddTask />
-      </Route>
-      <Route path="/specialists-list">
-        <SpecialistsFilter />
-      </Route>
-      <Route path="/tasks-filter">
-        <TasksFilter />
-      </Route>
-      <Route path="/my-tasks">
-        <MyTasks />
-      </Route>
+      <Route path="/start" component={Description} />
+      <Route path="/sign-in" component={Entrance}/>
+      <Route path="/sign-up" component={RegistrationFirst} />
+      <Route path="/sign-up-helper" component={RegistrationSecond} />
+      <Route path="/home" component={Main} />
+      <Route path="/user-choice" component={ChoicePageUser} />
+      <Route path="/add-task" component={AddTask} />
+      <Route path="/specialists-list" component={SpecialistsFilter} />
+      <Route path="/tasks-filter" component={TasksFilter} />
+      <Route path="/my-tasks" component={MyTasks} />
     </div>
   );
 }

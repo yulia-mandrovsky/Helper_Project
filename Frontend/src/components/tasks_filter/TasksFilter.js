@@ -13,27 +13,65 @@ const style = {
     })
   };
 
-let tasksList = [
-    {
-        "id": 1,
-        "name": "something",
-        "categorie": "cleaning",
-        "frequency": "Once a Month",
-        "city": "Tel-Aviv-Yaffo",
-        "price": 100,
-        "status": "active",
-        "term": "01/01/2022",
-        "owner": null,
-        "description": "some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text "
-        // исполнитель?
-    }
-]
 
 class TasksFilter extends Component {
+    // state = {
+    //     "category": '',
+    //     "city": '',
+    //     "frequency": '',
+    //     "price_from": '',
+    //     "price_up": ''
+    // }
 
-    handleClick(){
-        window.open("#");
+    state = {
+        tasks: [],
+        active_status: 'ongoing'
+    }
+
+componentDidMount() {
+ this.fetchTasks('ongoing')
+}
+
+fetchTasks = (status) => {
+    fetch(`http://localhost:2121/tasks?status=active`, {
+        headers: {
+            'Content-type': 'application/json',
+            "Authorization": localStorage.getItem("token")
+        }
+    })
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        this.setState({tasks: data})
+    })
+}
+
+    handleClick = () => {
+// 
       }
+
+    changeCategoryHandler = (newCategory) => {
+        this.setState({category: newCategory})
+    }
+
+    changeCityHandler = (newCity) => {
+        this.setState({city: newCity})
+    }
+
+    changeFrequencyHandler = (newFrequency) => {
+        this.setState({frequency: newFrequency})
+    }
+
+    changePriceFromHandler = (event) => {
+        this.setState({price_from: event.target.value})
+    }
+
+    changePriceUpHandler = (event) => {
+        this.setState({price_up: event.target.value})
+    }
+
+
 
     render() {
         return (
@@ -48,58 +86,17 @@ class TasksFilter extends Component {
                 </div>
                     <h1 className="Title" >Find a Task</h1>
                 </header>
-                <Select name="Categorie" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} />
-                <Select name="CitiesForWork" placeholder="Desirable Locations" styles={style} className="registration_input input select" isMulti options={options_cities} />
-                <Select name="Frequency" placeholder="Frequency" styles={style} className="registration_input input select" isMulti options={options_frequency} />
+                <Select name="Categorie" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} onChange={this.changeCategoryHandler} />
+                <Select name="CitiesForWork" placeholder="Desirable Locations" styles={style} className="registration_input input select" isMulti options={options_cities} onChange={this.changeCityHandler} />
+                <Select name="Frequency" placeholder="Frequency" styles={style} className="registration_input input select" isMulti options={options_frequency} onChange={this.changeFrequencyHandler} />
                 <div className="input_filter_price">
-                    <input name="PriceFrom" placeholder="Price from, NIS" className="price_input"></input>
+                    <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler} ></input>
                 </div>
                 <div className="input_filter_price">
-                    <input name="PriceUp" placeholder="Price up to, NIS" className="price_input"></input>
+                    <input name="PriceUp" placeholder="Price up to, NIS" className="price_input" onChange={this.changePriceUHandler} ></input>
                 </div>
-               
-                {/* <div className="checkbox_wrapper">
-                    <h2 className="checkbox_title" >Frequency</h2>
-                        <div className="checkbox_block">
-                            <div className="check_label_wrapper">
-                                <label className="filter_lable" >Some lable</label>
-                                <input className="checkbox_filter"
-                                    type="checkbox"
-                                    // checked={this.state.isActive}
-                                    // onChange={this.handleCheckboxChange}
-                                    />
-                            </div>
-                            <br/> */}
-                            {/* <div className="check_label_wrapper">
-                                <label className="filter_lable" >Some lable</label>
-                                <input className="checkbox_filter"
-                                    type="checkbox"
-                                    // checked={this.state.isActive}
-                                    // onChange={this.handleCheckboxChange}
-                                    />
-                            </div>
-                            <br/>
-                            <div className="check_label_wrapper">
-                                <label className="filter_lable" >Some lable</label>
-                                <input className="checkbox_filter"
-                                    type="checkbox"
-                                    // checked={this.state.isActive}
-                                    // onChange={this.handleCheckboxChange}
-                                    />
-                            </div>
-                            <br/>
-                            <div className="check_label_wrapper">
-                                <label className="filter_lable" >Some lable</label>
-                                <input className="checkbox_filter"
-                                    type="checkbox"
-                                    // checked={this.state.isActive}
-                                    // onChange={this.handleCheckboxChange}
-                                    />
-                            </div>
-                        </div>
-                    </div> */}
                     <button className="apply_button" onClick={this.handleClick}>Update</button>
-                    {tasksList.map((task) => <Card key={task.id} task={task} />)}
+                    {this.state.tasks.map((task) => <Card key={task.id} task={task} />)}
             </div> 
         )
     }

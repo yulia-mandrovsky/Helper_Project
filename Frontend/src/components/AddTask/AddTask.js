@@ -14,17 +14,76 @@ const style = {
 
 class AddTask extends Component {
     state = {
-        "isActive": false
+        "isActive": false,
+        "categorie": '',
+        "status": 'ongoing',
+        "task_name": '',
+        "frequency": '',
+        "city": '',
+        "price": null,
+        "description": ''
     }
 
     clickHandler = (event) => {
         event.preventDefault();
-        // fetch()
-        console.log(this.state)
-        window.location ="/my-tasks";
+        const body = {
+            task_name: this.state.task_name, 
+            status: this.state.status, 
+            categorie: this.state.categorie.label, 
+            frequency: this.state.frequency.label, 
+            city: this.state.city.label, 
+            price: Number(this.state.price), 
+            phone: this.state.phone,
+            description: this.state.description
+        }
+        console.log(body)
+        fetch('http://localhost:2121/tasks', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                "Authorization": localStorage.getItem("token")
+            },
+            body: JSON.stringify(body),
+        })
+        .then((res) => {
+            return res.json()
+        })
+        .then((data) => {
+            console.log(data);
+            this.props.history.push("/my-tasks");
+        })
+    }
+
+    changeCategoryHandler = (newCategory) => {
+        this.setState({categorie: newCategory})
+    }
+
+    changeTaskNameHandler = (event) => {
+        this.setState({task_name: event.target.value})
+    }
+
+    changeCityHandler = (newCity) => {
+        this.setState({city: newCity})
+    }
+
+    changeFrequencyHandler = (newFrequency) => {
+        this.setState({frequency: newFrequency})
+    }
+
+    changePriceHandler = (event) => {
+        this.setState({price: event.target.value})
+    }
+
+    changePhoneHandler = (event) => {
+        this.setState({phone: event.target.value})
+    }
+
+    changeDescriptionHandler = (event) => {
+        this.setState({description: event.target.value})
     }
 
     render() {
+        console.log(this.state.phone)
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -36,12 +95,13 @@ class AddTask extends Component {
                 </div>
                 <h1 className="page_title">Add Task</h1>
                 <h2 className="page_post_title">Please fill the form below</h2>
-                <Select name="Categorie" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} />
-                <input name="TaskName" placeholder="Title" className="registration_input input"></input><br/>
-                <Select name="CityOfTask" placeholder="Location" styles={style} className="registration_input input select" options={options_cities} />
-                <Select name="FrequencyOfServices" placeholder="Frequency of Services" styles={style} className="registration_input input select" isMulti options={options_frequency} />
-                <input name="PricePerHour" placeholder="Price per hour, NIS" className="registration_input input"></input><br/>
-                <textarea name="AboutTask" placeholder="About task" className="textarea"></textarea>
+                <Select name="Categorie" value={this.state.categorie} placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />
+                <input name="TaskName" value={this.state.task_name} placeholder="Title" className="registration_input input" onChange={this.changeTaskNameHandler}></input><br/>
+                <Select name="CityOfTask" value={this.state.city}  placeholder="Location" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
+                <Select name="FrequencyOfServices" value={this.state.frequency}  placeholder="Frequency of Services" styles={style} className="registration_input input select" options={options_frequency} onChange={this.changeFrequencyHandler}/>
+                <input name="PricePerHour" value={this.state.price}  placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}></input><br/>
+                <input name="Phone" value={this.state.phone}  placeholder="Phone" className="registration_input input" onChange={this.changePhoneHandler}></input><br/>
+                <textarea name="AboutTask" value={this.state.description} placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
                 <button className="adder" disabled={this.state.isActive} onClick={this.clickHandler}>Next</button>
             </div>
         )

@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
+import { options_language } from '../../Values';
 import './RegistrationFirst.css'
-
-const options = [
-    { value: 'english', label: 'English' },
-    { value: 'russian', label: 'Russian' },
-    { value: 'hebrew', label: 'Hebrew' },
-    { value: 'french', label: 'French' },
-    { value: 'arabic', label: 'Arabic' },
-    { value: 'amharic', label: 'Amharic' },
-  ]
 
   const style = {
     control: base => ({
@@ -22,17 +14,80 @@ const options = [
 
 class RegistrationFirst extends Component {
     state = {
-        "isActive": false
+        "isActive": false,
+        "username": '',
+        "email": '',
+        "city": '',
+        "telephone": '',
+        "numberID": '',
+        "languages": [],
+        "isHelper": false,
+        "password": ''
     }
 
     clickHandler = (event) => {
         event.preventDefault();
-        // fetch()
-        console.log(this.state)
-        window.location ="/sign-up-helper";
+        const body = {username: this.state.username, email: this.state.email, 
+            city: this.state.city, telephone: this.state.telephone, numberID: this.state.numberID, 
+            languages: this.state.languages.map((option) => option.value).join(','), 
+            isHelper: this.state.isHelper, password: this.state.password}
+        console.log(body)
+        fetch('http://localhost:2121/register', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(body), 
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((data)=> {
+            localStorage.setItem('token', data.token)
+            this.props.history.push("/sign-up-helper");
+        })
+    }
+
+    changeUsernameHandler = (event) => {
+        this.setState({username: event.target.value})
+        console.log(this.state.username)
+    }
+
+    changeEmailHandler = (event) => {
+        this.setState({email: event.target.value})
+        console.log(this.state.email)
+    }
+
+    changeCityHandler = (event) => {
+        this.setState({city: event.target.value})
+        console.log(this.state.city)
+    }
+
+    changePhoneHandler = (event) => {
+        this.setState({telephone: event.target.value})
+        console.log(this.state.telephone)
+    }
+
+    changeNumberIDHandler = (event) => {
+        this.setState({numberID: event.target.value})
+        console.log(this.state.numberID)
+    }
+
+    changeLanguageHandler = (newLanguages) => {
+        this.setState({languages: newLanguages})
+    }
+
+    changeIsHelperHandler = (event) => {
+        this.setState({isHelper: event.target.checked})
+    }
+
+    changePasswordHandler = (event) => {
+        this.setState({password: event.target.value})
+        console.log(this.state.password)
     }
 
     render() {
+        console.log(this.state.languages)
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -44,22 +99,22 @@ class RegistrationFirst extends Component {
                 </div>
                 <h1 className="registration_title">Sign Up</h1>
                 <h2 className="registration_post_title">Please fill the form below</h2>
-                <input name="FullName" placeholder="Full Name" className="registration_input input"></input>
-                <input name="email" placeholder="Email" className="registration_input input"></input>
-                <input name="City" placeholder="City" className="registration_input input"></input>
-                <input name="Telephone" placeholder="Phone" className="registration_input input"></input>
-                <input name="NumberID" placeholder="ID" className="registration_input input"></input>
-                <Select name="Language" placeholder="Language" styles={style} className="registration_input input select_language" isMulti options={options} /><br/>
+                <input name="FullName" value={this.state.username} placeholder="Full Name" className="registration_input input" onChange={this.changeUsernameHandler}></input>
+                <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.changeEmailHandler}></input>
+                <input name="City" value={this.state.city} placeholder="City" className="registration_input input" onChange={this.changeCityHandler}></input>
+                <input name="Telephone" value={this.state.telephone} placeholder="Phone" className="registration_input input" onChange={this.changePhoneHandler}></input>
+                <input name="NumberID" value={this.state.numberID} placeholder="ID" className="registration_input input" onChange={this.changeNumberIDHandler}></input>
+                <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="registration_input input select_language" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
                 <label>
                     <input className="checkbox_performer"
                         type="checkbox"
-                        // checked={this.state.isActive}
-                        // onChange={this.handleCheckboxChange}
+                        checked={this.state.isHelper}
+                        onChange={this.changeIsHelperHandler}
                         />
                      Want to be a helper
                 </label>
-                <input name="Password" placeholder="Password" className="registration_input input"></input>
-                <button className="sign_up" disabled={!this.state.isActive} onClick={this.clickHandler}>Sign Up</button>
+                <input name="Password" placeholder="Password" className="registration_input input" onChange={this.changePasswordHandler}></input>
+                <button className="sign_up" disabled={this.state.isActive} onClick={this.clickHandler}>Sign Up</button>
                 
             </div>
         )

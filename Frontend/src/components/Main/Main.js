@@ -5,7 +5,32 @@ import PicnicBasket from './picnic-basket.png';
 import VacuumCleaner from './vacuum-cleaner.png';
 
 class Main extends Component {
+    state = {
+        user: null
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:2121/me', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                "Authorization": localStorage.getItem("token")
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((data)=> {
+            console.log("i'm here")
+            this.setState({user: data});
+    })
+}
+
     render() {
+        if (!this.state.user) {
+            return null
+        }
+        console.log(this.state.user)
         return (
             <div className="wrapper">
                 <header className="header_wrapper">
@@ -18,7 +43,7 @@ class Main extends Component {
                 </div>
                     <h2 className="small_title_main" >Make your choice</h2>
                 </header>
-                <h1 className="hi_title">Hi, Name!</h1>
+                {this.state.user && <h1 className="hi_title">Hi, {this.state.user.username}!</h1>}
                 <h2 className="small_title title" >What do you want to do?</h2>
                 <div className="categories">
                     <Link to="/user-choice"  className="categorie">
@@ -27,7 +52,7 @@ class Main extends Component {
                             <h3>Find a helper</h3>
                         </div>
                     </Link>
-                    <Link to="/tasks-filter"  className="disabled">
+                    <Link to="/tasks-filter"  className={this.state.user.is_performer === false ? 'disabled' : 'categorie'}>
                         <div>
                             <img src={VacuumCleaner} alt="Vacuum Cleaner" height="100px" />
                             <h3>Find a task</h3>

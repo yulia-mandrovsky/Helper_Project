@@ -27,7 +27,49 @@ let SpecialistsList = [
 ]
 
 
+
+
 class SpecialistsFilter extends Component {
+    state = {
+        Categories: '',
+        work_cities: '',
+        price_from: '',
+        price_up: '',
+        helpers: []
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:2121/users', {
+            headers: {
+                'Content-type': 'application/json',
+                "Authorization": localStorage.getItem("token")
+            }
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            this.setState({helpers: data})
+        })
+    }
+
+    changeCategoriesHandler = (newCategories) => {
+        this.setState({categories: newCategories})
+    }
+
+    changeCitiesHandler = (newCities) => {
+        this.setState({work_cities: newCities})
+    }
+
+    changePriceFromHandler = (event) => {
+        this.setState({price_from: event.target.value})
+    }
+
+    changePriceUpHandler = (event) => {
+        this.setState({price_up: event.target.value})
+    }
+
+
     render() {
         return (
             <div className="wrapper">
@@ -41,16 +83,16 @@ class SpecialistsFilter extends Component {
                 </div>
                     <h1 className="Title" >Find a specialist</h1>
                 </header>
-                <Select name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} />
-                <Select name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" isMulti options={options_cities} />
+                <Select name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler}/>
+                <Select name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
                 <div className="input_filter_price">
-                    <input name="PriceFrom" placeholder="Price from, NIS" className="price_input"></input>
+                    <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler}></input>
                 </div>
                 <div className="input_filter_price">
-                    <input name="PriceUp" placeholder="Price up to, NIS" className="price_input"></input>
+                    <input name="PriceUp" placeholder="Price up to, NIS" className="price_input" onChange={this.changePriceUpHandler}></input>
                 </div>
                     <button className="apply_button">Apply</button>
-                {SpecialistsList.map((specialist) => <SpecialistSmallCard key={specialist.id} specialist={specialist} />)}
+                {this.state.helpers.map((helper) => <SpecialistSmallCard key={helper.id} helper={helper} />)}
 
             </div> 
         )

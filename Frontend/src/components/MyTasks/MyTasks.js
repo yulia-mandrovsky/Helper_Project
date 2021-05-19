@@ -4,23 +4,39 @@ import './MyTasks.css';
 import Card from '../Card/Card';
 
 
-let tasksList = [
-    {
-        "id": 1,
-        "name": "something",
-        "categorie": "cleaning",
-        "frequency": "Once a Month",
-        "city": "Tel-Aviv-Yaffo",
-        "price": 100,
-        "status": "archived",
-        "term": "01/01/2022",
-        "owner": null,
-        "description": "some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text "
-        // исполнитель?
-    }
-]
+
 
 class MyTasks extends Component {
+    state = {
+        tasks: [],
+        active_status: 'ongoing'
+    }
+
+componentDidMount() {
+ this.fetchMyTasks('ongoing')
+}
+
+fetchMyTasks = (status) => {
+    fetch(`http://localhost:2121/tasks?owner_id=me&status=${status}`, {
+        headers: {
+            'Content-type': 'application/json',
+            "Authorization": localStorage.getItem("token")
+        }
+    })
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        this.setState({tasks: data})
+    })
+}
+
+changeActiveStatus = (newStatus) => {
+    this.setState({active_status: newStatus});
+    this.fetchMyTasks(newStatus);
+    this.props.history.push("/home");
+}
+
     render() {
         return (
             <div className="wrapper">
@@ -35,18 +51,18 @@ class MyTasks extends Component {
                     <h1 className="Title">My Tasks</h1>
                     </header>
                     <div className="select-wrapper">
-                        <div className="select_block active select_border">
+                        <div onClick={() => {this.changeActiveStatus('ongoing')}} className={`select_block select_border ${this.state.active_status === 'ongoing' ? " active" : ''}`}>
                             <p>Draft</p>
                         </div>
                         {/* Прописать класс эктив (удаление и добавление) */}
-                        <div className="select_block select_border">
+                        <div onClick={() => {this.changeActiveStatus('active')}} className={`select_block select_border ${this.state.active_status === 'active' ? " active" : ''}`}>
                             <p>Active</p>
                         </div>
-                        <div className="select_block">
+                        <div onClick={() => {this.changeActiveStatus('archived')}} className={`select_block ${this.state.active_status === 'archived' ? " active" : ''}`}>
                             <p>Archived</p>
                         </div>
                     </div>
-                    {tasksList.map((task) => <Card key={task.id} task={task} />)}
+                    {this.state.tasks.map((task) => <Card key={task.id} task={task} />)}
             </div>
         )
     }

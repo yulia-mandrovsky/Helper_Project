@@ -5,6 +5,28 @@ import Task from './Task.png';
 import Specialist from './Specialist.png';
 
 class ChoicePageUser extends Component {
+
+    state = {
+        user: null
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:2121/me', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                "Authorization": localStorage.getItem("token")
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((data)=> {
+            console.log("i'm here")
+            this.setState({user: data});
+    })
+}
+
     render() {
         return (
             <div className="wrapper">
@@ -18,7 +40,7 @@ class ChoicePageUser extends Component {
                 </div>
                     <h2 className="small_title" >Make your choice</h2>
                 </header>
-                <h1 className="hi_title">Hi, Name!</h1>
+                {this.state.user && <h1 className="hi_title">Hi, {this.state.user.username}!</h1>}
                 <h2 className="small_title title" >What do you want to do?</h2>
                 
                 <div className="categories">
