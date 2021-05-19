@@ -38,12 +38,8 @@ class Card extends Component {
             })
             .then((data) => {
                 console.log(data);
-
-                this.props.history.push('/my-tasks')
-
+                // this.props.history.push('/my-tasks')
                 // перезагрузить компонент
-                // показывать только карточки с этим классом 
-                // change class on buttons
             })
         
     }
@@ -71,7 +67,7 @@ class Card extends Component {
         })
         .then((data) => {
             console.log(data);
-            this.props.history.push('/my-tasks')
+            // this.props.history.push('/my-tasks')
             // перезагрузить компонент
         })
     }
