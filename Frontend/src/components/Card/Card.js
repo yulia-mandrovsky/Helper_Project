@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Card.css';
 import Cleaning from './cleaning.png';
 import Delivery from './delivery.png';
@@ -44,7 +45,10 @@ class Card extends Component {
         
     }
 
+    
+
     confirmToActiveHandler = (event) => {
+        const {history} = this.props;
         // put status in task
         event.preventDefault();
         const body = {
@@ -64,7 +68,8 @@ class Card extends Component {
         })
         .then((data) => {
             console.log(data);
-            this.props.history.push('/home123')
+            console.log(history)
+            this.context.history.push('/home123')
             // перезагрузить компонент
         })
     }

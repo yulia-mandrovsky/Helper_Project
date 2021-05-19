@@ -34,7 +34,7 @@ fetchMyTasks = (status) => {
 changeActiveStatus = (newStatus) => {
     this.setState({active_status: newStatus});
     this.fetchMyTasks(newStatus);
-    this.props.history.push("/home");
+    this.props.history.push("/my-tasks");
 }
 
     render() {

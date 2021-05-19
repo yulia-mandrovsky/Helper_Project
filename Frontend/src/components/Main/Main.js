@@ -52,7 +52,7 @@ class Main extends Component {
                             <h3>Find a helper</h3>
                         </div>
                     </Link>
-                    <Link to="/tasks-filter"  className={this.state.user.is_performer === false ? 'disabled' : 'categorie'}>
+                    <Link to={this.state.user.is_performer === 1 ? "/tasks-filter" : "/home"}  className={this.state.user.is_performer === 0 ? 'disabled' : 'categorie'}>
                         <div>
                             <img src={VacuumCleaner} alt="Vacuum Cleaner" height="100px" />
                             <h3>Find a task</h3>

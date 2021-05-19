@@ -52,7 +52,7 @@ class RegistrationSecond extends Component {
         this.setState({price_per_hour: event.target.value})
     }
 
-    changeDEscriptionHandler = (event) => {
+    changeDescriptionHandler = (event) => {
         this.setState({description: event.target.value})
         
     }
@@ -98,15 +98,7 @@ class RegistrationSecond extends Component {
                     </Link>
                 </div>
                 <h1 className="registration_title">For perfomers</h1>
-                <h2 className="registration_post_title">Please write your information below</h2>
-                {/* <label>
-                    <input className="checkbox_performer" 
-                        type="checkbox"
-                        // checked={this.state.isActive}
-                        // onChange={this.handleCheckboxChange}
-                        checked />
-                     Want to be a performer
-                </label> */}
+                <h2 className="registration_post_title">Please write your information below<br/> if you want to be a helper</h2>
                 <Select name="Categories" value={this.state.categories} placeholder="Categories" styles={style} className="registration_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler} />
                 <Select name="CitiesForWork" value={this.state.work_cities} placeholder="Cities convenient for work" styles={style} className="registration_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
                 <input name="PricePerHour" value={this.state.price_per_hour} placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}/><br/>

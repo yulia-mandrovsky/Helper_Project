@@ -6,6 +6,7 @@ import Specialist from './Specialist.png';
 class SpecialistSmallCard extends Component {
     render() {
     const {helper} = this.props;
+    console.log(helper)
         return (
             <div className="card_wrapper">
                 <div className="image_wrapper">
@@ -13,7 +14,7 @@ class SpecialistSmallCard extends Component {
                 </div>
                 <div className="text_wrapper">
                     <div className="title_wrapper">
-                        <h2 className="card_title">{helper.name}</h2>
+                        <h2 className="card_title">{helper.username}</h2>
                     </div>
                     <div className="card_row">
                         <p>Category</p><p>{helper.categorie}</p>
@@ -22,10 +23,10 @@ class SpecialistSmallCard extends Component {
                         <p>Desirable locations</p><p>{helper.city}</p>
                     </div>
                     <div className="card_row">
-                        <p>Price Per Hour</p><p>{helper.PricePerHour}</p>
+                        <p>Price Per Hour</p><p>{helper.price_per_hour}</p>
                     </div>
                     <div className="card_row">
-                        <p>Phone</p><p>{helper.Phone}</p>
+                        <p>Phone</p><p>{helper.telephone}</p>
                     </div>
                     <div className="card_row description_row">
                         <p className="ongoing_card_label">Description</p>
