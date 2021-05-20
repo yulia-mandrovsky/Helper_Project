@@ -155,14 +155,49 @@ app.get('/users', function (req, res) {
 
 // TASKS
 // get TASKS LIST
+// app.get('/tasks', authMiddleWare, function (req, res) {
+//     let sqlQuery = `
+//         SELECT * FROM tasks
+//     `
+//     let owner_id = req.query.owner_id
+//     let status = req.query.status
+//     if (owner_id || status) {
+//         sqlQuery = sqlQuery + ` WHERE `
+//         let conditions = []
+//         if (owner_id) {
+//             conditions.push(`owner_id = ${owner_id === "me" ? req.user.id : owner_id}`)
+//         }
+//         if (status) {
+//             conditions.push(`status = '${status}'`)
+//         }
+//         sqlQuery = sqlQuery + conditions.join(' AND ')
+//     }
+//     db.query(sqlQuery, (err, data) => {
+//         if (err) {
+//             res.status(400).json(err)
+//             return;
+//         }
+//         res.status(200).json(data)
+//     })
+// });
+
+// get TASKS LIST by Filter
 app.get('/tasks', authMiddleWare, function (req, res) {
     let sqlQuery = `
         SELECT * FROM tasks
     `
     let owner_id = req.query.owner_id
     let status = req.query.status
-    if (owner_id || status) {
+    let category = req.query.category
+    let city = req.query.city
+    let frequency = req.query.frequency
+    let price_from = req.query.price_from
+    let price_up = req.query.price_up
+
+    console.log(typeof category, typeof city, typeof frequency)
+    if (owner_id || status || category || city || frequency || price_from || price_up) {
         sqlQuery = sqlQuery + ` WHERE `
+        console.log("kuku")
         let conditions = []
         if (owner_id) {
             conditions.push(`owner_id = ${owner_id === "me" ? req.user.id : owner_id}`)
@@ -170,7 +205,25 @@ app.get('/tasks', authMiddleWare, function (req, res) {
         if (status) {
             conditions.push(`status = '${status}'`)
         }
+        // TODO сделать мульти фильтр по категории и городу
+
+        if (category) {
+            conditions.push(`categorie = "${category}"`)
+        }
+        if (city) {
+            conditions.push(`city = "${city}"`)
+        }
+        if (frequency) {
+            conditions.push(`frequency = "${frequency}"`)
+        }
+        if (price_from) {
+            conditions.push(`price >= ${price_from}`)
+        }
+        if (price_up) {
+            conditions.push(`price <= ${price_up}`)
+        }
         sqlQuery = sqlQuery + conditions.join(' AND ')
+        console.log(sqlQuery)
     }
     db.query(sqlQuery, (err, data) => {
         if (err) {

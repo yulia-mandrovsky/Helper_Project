@@ -56,7 +56,6 @@ changeActiveStatus = (newStatus) => {
                         <div onClick={() => {this.changeActiveStatus('ongoing')}} className={`select_block select_border ${this.state.active_status === 'ongoing' ? " active" : ''}`}>
                             <p>Draft</p>
                         </div>
-                        {/* Прописать класс эктив (удаление и добавление) */}
                         <div onClick={() => {this.changeActiveStatus('active')}} className={`select_block select_border ${this.state.active_status === 'active' ? " active" : ''}`}>
                             <p>Active</p>
                         </div>
