@@ -4,10 +4,17 @@ import './Entrance.css'
 
 class Entrance extends Component {
     state = {
-        isActive: false,
         email: "",
         password: "",
         token: ""
+    }
+
+    isDataValid = () => {
+        if (this.state.email !== '' && this.state.password !== '') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     changeEmailHandler = (event) => {
@@ -53,6 +60,7 @@ class Entrance extends Component {
 }
 
     render() {
+        let isActive = this.isDataValid();
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -79,7 +87,7 @@ class Entrance extends Component {
                 <form onSubmit={this.submitHandler}>
                     <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.changeEmailHandler} ></input>
                     <input name="password" value={this.state.password} type="password" placeholder="Password" className="registration_input input" onChange={this.changePasswordHandler}></input>
-                    <button type="submit" className="sign_up" disabled={!this.state.isActive} >Sign In</button>
+                    <button type="submit" className="sign_up" disabled={!isActive} >Sign In</button>
                 </form>
             </div>
         )

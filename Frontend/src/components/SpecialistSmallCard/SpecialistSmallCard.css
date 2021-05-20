@@ -1,4 +1,4 @@
-.card_wrapper {
+.specialist_card_wrapper {
     width: 90%;
     height: 220px;
     background-color: #FFFFFF;
@@ -17,12 +17,6 @@
     height: 100%;
     box-sizing: border-box;
     padding: 8px;
-}
-
-.frequency {
-    margin-top: 30px;
-    color: #007AFF;
-    font-weight: 700;
 }
 
 .text_wrapper {
@@ -68,7 +62,7 @@
     justify-content: flex-end;
 }
 
-.card_button {
+.helper_card_button {
     margin-top: 15px;
     height: 34px;
     width: 40%;
