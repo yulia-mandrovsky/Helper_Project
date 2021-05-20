@@ -18,6 +18,18 @@ const images_by_categorie = {
   }
 
 class Card extends Component {
+    state = {
+        button_text: 'Details'
+    }
+
+    openingButtonHandler = (event) => {
+        if (this.state.button_text === 'Details') {
+            this.setState({button_text: 'Close'})
+        } 
+        if (this.state.button_text === 'Close') {
+        this.setState({button_text: 'Details'})
+        }
+    }
 
     activeToArchiveTaskHandler = (event) => {
             event.preventDefault();
@@ -38,8 +50,7 @@ class Card extends Component {
             })
             .then((data) => {
                 console.log(data);
-                // this.props.history.push('/my-tasks')
-                // перезагрузить компонент
+                this.props.onStatusChange('archived')
             })
         
     }
@@ -67,8 +78,7 @@ class Card extends Component {
         })
         .then((data) => {
             console.log(data);
-            // this.props.history.push('/my-tasks')
-            // перезагрузить компонент
+            this.props.onStatusChange('active')
         })
     }
 
@@ -84,7 +94,7 @@ class Card extends Component {
     // ~~~~~~~~ ACTIVE
         if (task.status === "active") {
         return (
-            <div className="card_wrapper">
+            <div className="active_card_wrapper" >
                 <div className="image_wrapper">
                 {/* Прописать условие выбора картинки по категории */}
                 {images_by_categorie[task.categorie] && <img src={images_by_categorie[task.categorie]} alt="some" height="80px" />}
@@ -92,7 +102,7 @@ class Card extends Component {
                 </div>
                 <div className="text_wrapper">
                     <div className="title_wrapper">
-                        <h2 className="card_title">{task.name}</h2>
+                        <h2 className="card_title">{task.task_name}</h2>
                     </div>
                     <div className="card_row">
                         <p>Category</p><p>{task.categorie}</p>
@@ -100,15 +110,20 @@ class Card extends Component {
                     <div className="card_row">
                         <p>City</p><p>{task.city}</p>
                     </div>
+                    {this.state.button_text === 'Close' ? <div className="card_row description_row">
+                    <p>Description</p>
+                        <p className="p_description">{task.description}</p>
+                    </div> : null}
                     <div className="card_row">
                         <p>Total Price</p><p>{task.price}</p>
                     </div>
                     <div className="card_row">
                         <p>Phone</p><p>{task.phone}</p>
                     </div>
-                    <div className="card_row button_row">
+                    {this.props.onStatusChange && <div className="card_row button_row">
+                        <button className="opening" onClick={this.openingButtonHandler}>{this.state.button_text}</button>
                         <button className="card_button cancelling_button" onClick={this.activeToArchiveTaskHandler}>Cancel</button>
-                    </div>
+                    </div>}
                 </div>
             </div>
         )
@@ -121,7 +136,7 @@ class Card extends Component {
                         <div className="icon_wrapper">
                         {images_by_categorie[task.categorie] && <img src={images_by_categorie[task.categorie]} alt="some" height="80px" />}
                         </div>
-                        <h2>{task.name}</h2>
+                        <h2>{task.task_name}</h2>
                     </div>
                     <div className="ongoing_card_row">
                         <p className="ongoing_card_label">Categorie</p>
@@ -162,10 +177,13 @@ class Card extends Component {
                 </div>
                 <div className="text_wrapper">
                     <div className="title_wrapper">
-                        <h2 className="card_title">{task.name}</h2>
+                        <h2 className="card_title">{task.task_name}</h2>
                     </div>
                     <div className="card_row">
                         <p>Categorie</p><p>{task.categorie}</p>
+                    </div>
+                    <div className="card_row">
+                        <p>City</p><p>{task.city}</p>
                     </div>
                     <div className="card_row">
                         <p>Total Price</p><p>{task.price}</p>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
-import { options_language } from '../../Values';
+import { options_language, options_cities } from '../../Values';
 import './RegistrationFirst.css'
 
   const style = {
@@ -14,7 +14,6 @@ import './RegistrationFirst.css'
 
 class RegistrationFirst extends Component {
     state = {
-        "isActive": false,
         "username": '',
         "email": '',
         "city": '',
@@ -24,6 +23,8 @@ class RegistrationFirst extends Component {
         "isHelper": false,
         "password": ''
     }
+
+    
 
     clickHandler = (event) => {
         event.preventDefault();
@@ -44,8 +45,19 @@ class RegistrationFirst extends Component {
         })
         .then((data)=> {
             localStorage.setItem('token', data.token)
-            this.props.history.push("/sign-up-helper");
+            if (this.state.isHelper === true) {
+                this.props.history.push("/sign-up-helper");
+            }
+            this.props.history.push("/home");
         })
+    }
+
+    isDataValid = () => {
+        if (this.state.username !== '' && this.state.email !== '' && this.state.telephone !== '' && this.state.password !== '') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     changeUsernameHandler = (event) => {
@@ -58,8 +70,8 @@ class RegistrationFirst extends Component {
         console.log(this.state.email)
     }
 
-    changeCityHandler = (event) => {
-        this.setState({city: event.target.value})
+    changeCityHandler = (newCity) => {
+        this.setState({city: newCity})
         console.log(this.state.city)
     }
 
@@ -87,7 +99,7 @@ class RegistrationFirst extends Component {
     }
 
     render() {
-        console.log(this.state.languages)
+        let isActive = this.isDataValid();
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -99,10 +111,10 @@ class RegistrationFirst extends Component {
                 </div>
                 <h1 className="registration_title">Sign Up</h1>
                 <h2 className="registration_post_title">Please fill the form below</h2>
-                <input name="FullName" value={this.state.username} placeholder="Full Name" className="registration_input input" onChange={this.changeUsernameHandler}></input>
-                <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.changeEmailHandler}></input>
-                <input name="City" value={this.state.city} placeholder="City" className="registration_input input" onChange={this.changeCityHandler}></input>
-                <input name="Telephone" value={this.state.telephone} placeholder="Phone" className="registration_input input" onChange={this.changePhoneHandler}></input>
+                <input name="FullName" value={this.state.username} placeholder="Full Name *" className="registration_input input" onChange={this.changeUsernameHandler}></input>
+                <input name="email" value={this.state.email} placeholder="Email *" className="registration_input input" onChange={this.changeEmailHandler}></input>
+                <Select name="City" value={this.state.city}  placeholder="City" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
+                <input name="Telephone" value={this.state.telephone} placeholder="Phone *" className="registration_input input" onChange={this.changePhoneHandler}></input>
                 <input name="NumberID" value={this.state.numberID} placeholder="ID" className="registration_input input" onChange={this.changeNumberIDHandler}></input>
                 <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="registration_input input select_language" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
                 <label>
@@ -113,8 +125,8 @@ class RegistrationFirst extends Component {
                         />
                      Want to be a helper
                 </label>
-                <input name="Password" placeholder="Password" className="registration_input input" onChange={this.changePasswordHandler}></input>
-                <button className="sign_up" disabled={this.state.isActive} onClick={this.clickHandler}>Sign Up</button>
+                <input type='password' name="Password" placeholder="Password *" className="registration_input input" onChange={this.changePasswordHandler}></input>
+                <button className="sign_up" disabled={!isActive} onClick={isActive ? this.clickHandler : null}>Sign Up</button>
                 
             </div>
         )

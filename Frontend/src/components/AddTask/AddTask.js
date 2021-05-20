@@ -14,14 +14,22 @@ const style = {
 
 class AddTask extends Component {
     state = {
-        "isActive": false,
-        "categorie": '',
-        "status": 'ongoing',
-        "task_name": '',
-        "frequency": '',
-        "city": '',
-        "price": null,
-        "description": ''
+        categorie: '',
+        status: 'ongoing',
+        task_name: '',
+        frequency: '',
+        city: '',
+        price: null,
+        phone: '',
+        description: ''
+    }
+
+    isDataValid = () => {
+        if (this.state.categorie !== '' && this.state.task_name !== '' && this.state.city !== '' && this.state.phone !== '') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     clickHandler = (event) => {
@@ -83,7 +91,7 @@ class AddTask extends Component {
     }
 
     render() {
-        console.log(this.state.phone)
+        let isActive = this.isDataValid()
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -94,6 +102,7 @@ class AddTask extends Component {
                 </Link>
                 </div>
                 <h1 className="page_title">Add Task</h1>
+                <Link to='/my-tasks'className="my_tasks_button">My Tasks</Link>
                 <h2 className="page_post_title">Please fill the form below</h2>
                 <Select name="Categorie" value={this.state.categorie} placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />
                 <input name="TaskName" value={this.state.task_name} placeholder="Title" className="registration_input input" onChange={this.changeTaskNameHandler}></input><br/>
@@ -102,7 +111,7 @@ class AddTask extends Component {
                 <input name="PricePerHour" value={this.state.price}  placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}></input><br/>
                 <input name="Phone" value={this.state.phone}  placeholder="Phone" className="registration_input input" onChange={this.changePhoneHandler}></input><br/>
                 <textarea name="AboutTask" value={this.state.description} placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
-                <button className="adder" disabled={this.state.isActive} onClick={this.clickHandler}>Next</button>
+                <button className="adder" disabled={!isActive} onClick={isActive ? this.clickHandler : null}>Next</button>
             </div>
         )
     }

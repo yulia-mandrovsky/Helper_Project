@@ -28,7 +28,9 @@ fetchMyTasks = (status) => {
     })
     .then((data) => {
         this.setState({tasks: data})
+        this.setState({active_status: status})
     })
+    console.log(this)
 }
 
 changeActiveStatus = (newStatus) => {
@@ -62,7 +64,7 @@ changeActiveStatus = (newStatus) => {
                             <p>Archived</p>
                         </div>
                     </div>
-                    {this.state.tasks.map((task) => <Card key={task.id} task={task} />)}
+                    {this.state.tasks.map((task) => <Card key={task.id} task={task} onStatusChange={this.changeActiveStatus}/>)}
             </div>
         )
     }

@@ -8,7 +8,7 @@ class SpecialistSmallCard extends Component {
     const {helper} = this.props;
     console.log(helper)
         return (
-            <div className="card_wrapper">
+            <div className="specialist_card_wrapper">
                 <div className="image_wrapper">
                 <img src={Specialist} alt="Helper" height="80px" />
                 </div>
@@ -33,7 +33,7 @@ class SpecialistSmallCard extends Component {
                         <p className="p_description">{helper.description}</p>
                     </div>
                     {/* <div className="card_row button_row">
-                        <button className="card_button show_button contacts_button">Contacts</button>
+                        <button className="helper_card_button show_button contacts_button">Contacts</button>
                     </div> */}
                 </div>
             </div>
