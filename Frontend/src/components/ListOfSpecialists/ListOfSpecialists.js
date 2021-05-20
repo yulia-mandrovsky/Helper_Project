@@ -31,7 +31,7 @@ let SpecialistsList = [
 
 class SpecialistsFilter extends Component {
     state = {
-        Categories: '',
+        categories: '',
         work_cities: '',
         price_from: '',
         price_up: '',
@@ -53,12 +53,32 @@ class SpecialistsFilter extends Component {
         })
     }
 
-    changeCategoriesHandler = (newCategories) => {
-        this.setState({categories: newCategories})
+    fetchFilteredHelpers = () => {
+        fetch(`http://localhost:2121/users?${this.state.categories.label ? '&categories=' + this.state.categories.label : ''}${this.state.work_cities.label ? '&work_cities=' + this.state.work_cities.label : ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
+            headers: {
+                'Content-type': 'application/json',
+                "Authorization": localStorage.getItem("token")
+            }
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            this.setState({helpers: data})
+            console.log(data)
+        })
+        
     }
 
-    changeCitiesHandler = (newCities) => {
-        this.setState({work_cities: newCities})
+
+
+
+    changeCategoriesHandler = (newCategory) => {
+        this.setState({categories: newCategory})
+    }
+
+    changeCitiesHandler = (newCitie) => {
+        this.setState({work_cities: newCitie})
     }
 
     changePriceFromHandler = (event) => {
@@ -68,6 +88,8 @@ class SpecialistsFilter extends Component {
     changePriceUpHandler = (event) => {
         this.setState({price_up: event.target.value})
     }
+
+
 
 
     render() {
@@ -83,15 +105,15 @@ class SpecialistsFilter extends Component {
                 </div>
                     <h1 className="Title" >Find a specialist</h1>
                 </header>
-                <Select name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler}/>
-                <Select name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
+                <Select name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoriesHandler}/>
+                <Select name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCitiesHandler}/>
                 <div className="input_filter_price">
                     <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler}></input>
                 </div>
                 <div className="input_filter_price">
                     <input name="PriceUp" placeholder="Price up to, NIS" className="price_input" onChange={this.changePriceUpHandler}></input>
                 </div>
-                    <button className="apply_button">Apply</button>
+                    <button className="apply_button" onClick={this.fetchFilteredHelpers}>Apply</button>
                 {this.state.helpers.map((helper) => <SpecialistSmallCard key={helper.id} helper={helper} />)}
 
             </div> 

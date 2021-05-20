@@ -138,11 +138,35 @@ app.get('/me', authMiddleWare, function (req, res) {
 
 
 // get List of Users 
-app.get('/users', function (req, res) {
-    db.query(`
-    select * from users
-    WHERE is_performer = true;
-    `, (err, data) => {
+app.get('/users', authMiddleWare, function (req, res) {
+    let sqlQuery = `
+        SELECT * FROM users
+        WHERE is_performer = true
+    `
+    let categories = req.query.categories
+    let work_cities = req.query.work_cities
+    let price_from = req.query.price_from
+    let price_up = req.query.price_up
+    if (categories || work_cities || price_from || price_up) {
+        sqlQuery = sqlQuery + ` AND `
+        let helper_conditions =[]
+        if (categories) {
+            helper_conditions.push(`categories = "${categories}"`)
+        }
+        if (work_cities) {
+            helper_conditions.push(`work_cities = "${work_cities}"`)
+        }
+        if (price_from) {
+            helper_conditions.push(`price >= ${price_from}`)
+        }
+        if (price_up) {
+            helper_conditions.push(`price <= ${price_up}`)
+        }
+        sqlQuery = sqlQuery + helper_conditions.join(' AND ')
+        console.log(sqlQuery)
+    }
+    
+    db.query(sqlQuery, (err, data) => {
         if (err) {
             res.status(400).json(err)
             return;
@@ -151,35 +175,7 @@ app.get('/users', function (req, res) {
     })
 });
 
-
-
 // TASKS
-// get TASKS LIST
-// app.get('/tasks', authMiddleWare, function (req, res) {
-//     let sqlQuery = `
-//         SELECT * FROM tasks
-//     `
-//     let owner_id = req.query.owner_id
-//     let status = req.query.status
-//     if (owner_id || status) {
-//         sqlQuery = sqlQuery + ` WHERE `
-//         let conditions = []
-//         if (owner_id) {
-//             conditions.push(`owner_id = ${owner_id === "me" ? req.user.id : owner_id}`)
-//         }
-//         if (status) {
-//             conditions.push(`status = '${status}'`)
-//         }
-//         sqlQuery = sqlQuery + conditions.join(' AND ')
-//     }
-//     db.query(sqlQuery, (err, data) => {
-//         if (err) {
-//             res.status(400).json(err)
-//             return;
-//         }
-//         res.status(200).json(data)
-//     })
-// });
 
 // get TASKS LIST by Filter
 app.get('/tasks', authMiddleWare, function (req, res) {
@@ -193,8 +189,6 @@ app.get('/tasks', authMiddleWare, function (req, res) {
     let frequency = req.query.frequency
     let price_from = req.query.price_from
     let price_up = req.query.price_up
-
-    console.log(typeof category, typeof city, typeof frequency)
     if (owner_id || status || category || city || frequency || price_from || price_up) {
         sqlQuery = sqlQuery + ` WHERE `
         console.log("kuku")

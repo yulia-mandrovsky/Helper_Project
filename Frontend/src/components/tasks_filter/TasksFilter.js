@@ -31,18 +31,7 @@ componentDidMount() {
 }
 
 fetchTasks = () => {
-    fetch(`http://localhost:2121/tasks?status=active`, {
-        headers: {
-            'Content-type': 'application/json',
-            "Authorization": localStorage.getItem("token")
-        }
-    })
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        this.setState({tasks: data})
-    })
+    this.fetchFilteredTasks()
 }
 
     handleClick = () => {
