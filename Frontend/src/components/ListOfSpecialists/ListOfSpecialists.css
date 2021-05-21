@@ -29,6 +29,7 @@ html {
     border: none;
     padding-top: 10px;
     align-items: center;
+    padding-left: 0;
 }
 
 .price_input {
