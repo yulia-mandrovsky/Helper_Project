@@ -61,8 +61,8 @@ class RegistrationSecond extends Component {
         event.preventDefault();
         const body_send = {
             id: this.state.id,
-            categories: this.state.categories, 
-            work_cities: this.state.work_cities, 
+            categories: this.state.categories.map((option) => option.value).join(', '), 
+            work_cities: this.state.work_cities.map((option) => option.value).join(', '), 
             price_per_hour: this.state.price_per_hour, 
             description: this.state.description
         }

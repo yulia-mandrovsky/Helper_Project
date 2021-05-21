@@ -30,7 +30,7 @@ class RegistrationFirst extends Component {
         event.preventDefault();
         const body = {username: this.state.username, email: this.state.email, 
             city: this.state.city, telephone: this.state.telephone, numberID: this.state.numberID, 
-            languages: this.state.languages.map((option) => option.value).join(','), 
+            languages: this.state.languages.map((option) => option.value).join(', '), 
             isHelper: this.state.isHelper, password: this.state.password}
         console.log(body)
         fetch('http://localhost:2121/register', {
@@ -47,6 +47,7 @@ class RegistrationFirst extends Component {
             localStorage.setItem('token', data.token)
             if (this.state.isHelper === true) {
                 this.props.history.push("/sign-up-helper");
+                return;
             }
             this.props.history.push("/home");
         })

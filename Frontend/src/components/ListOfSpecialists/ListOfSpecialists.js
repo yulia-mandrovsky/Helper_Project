@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
 import './ListOfSpecialists.css';
-import { options_categorie, options_cities } from '../../Values';
+import { options_categorie, options_cities, options_language } from '../../Values';
 import SpecialistSmallCard from '../SpecialistSmallCard/SpecialistSmallCard';
 
 
@@ -32,6 +32,7 @@ let SpecialistsList = [
 class SpecialistsFilter extends Component {
     state = {
         categories: '',
+        languages: '',
         work_cities: '',
         price_from: '',
         price_up: '',
@@ -39,22 +40,11 @@ class SpecialistsFilter extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:2121/users', {
-            headers: {
-                'Content-type': 'application/json',
-                "Authorization": localStorage.getItem("token")
-            }
-        })
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            this.setState({helpers: data})
-        })
+        this.fetchFilteredHelpers()
     }
 
     fetchFilteredHelpers = () => {
-        fetch(`http://localhost:2121/users?${this.state.categories.label ? '&categories=' + this.state.categories.label : ''}${this.state.work_cities.label ? '&work_cities=' + this.state.work_cities.label : ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
+        fetch(`http://localhost:2121/users?${this.state.categories ? '&categories=' + this.state.categories.value : ''}${this.state.languages ? '&languages=' + this.state.languages.value : ''}${this.state.work_cities ? '&work_cities=' + this.state.work_cities.value : ''}${this.state.price_from ? '&price_from=' + this.state.price_from : ''}${this.state.price_up ? '&price_up=' + this.state.price_up : ''}`, {
             headers: {
                 'Content-type': 'application/json',
                 "Authorization": localStorage.getItem("token")
@@ -67,18 +57,21 @@ class SpecialistsFilter extends Component {
             this.setState({helpers: data})
             console.log(data)
         })
-        
     }
 
-
+   
 
 
     changeCategoriesHandler = (newCategory) => {
         this.setState({categories: newCategory})
     }
 
-    changeCitiesHandler = (newCitie) => {
-        this.setState({work_cities: newCitie})
+    changeLanguagesHandler = (newLang) => {
+        this.setState({languages: newLang})
+    }
+    
+    changeCitiesHandler = (newCity) => {
+        this.setState({work_cities: newCity})
     }
 
     changePriceFromHandler = (event) => {
@@ -105,8 +98,9 @@ class SpecialistsFilter extends Component {
                 </div>
                     <h1 className="Title" >Find a specialist</h1>
                 </header>
-                <Select name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoriesHandler}/>
-                <Select name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCitiesHandler}/>
+                <Select isClearable name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoriesHandler}/>
+                <Select isClearable name="Languages" placeholder="Language" styles={style} className="registration_input input select" options={options_language} onChange={this.changeLanguagesHandler}/>
+                <Select isClearable name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCitiesHandler}/>
                 <div className="input_filter_price">
                     <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler}></input>
                 </div>

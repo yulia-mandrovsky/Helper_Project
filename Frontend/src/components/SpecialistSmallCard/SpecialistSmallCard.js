@@ -17,16 +17,19 @@ class SpecialistSmallCard extends Component {
                         <h2 className="card_title">{helper.username}</h2>
                     </div>
                     <div className="card_row">
-                        <p>Category</p><p>{helper.categorie}</p>
+                        <p>Categories</p><p className="p_info">{helper.categories}</p>
                     </div>
                     <div className="card_row">
-                        <p>Desirable locations</p><p>{helper.city}</p>
+                        <p>Languages</p><p className="p_info">{helper.languages}</p>
                     </div>
                     <div className="card_row">
-                        <p>Price Per Hour</p><p>{helper.price_per_hour}</p>
+                        <p>Desirable locations</p><p className="p_info">{helper.work_cities}</p>
                     </div>
                     <div className="card_row">
-                        <p>Phone</p><p>{helper.telephone}</p>
+                        <p>Price Per Hour</p><p className="p_info">{helper.price_per_hour}</p>
+                    </div>
+                    <div className="card_row">
+                        <p>Phone</p><p className="p_info">{helper.telephone}</p>
                     </div>
                     <div className="card_row description_row">
                         <p className="ongoing_card_label">Description</p>

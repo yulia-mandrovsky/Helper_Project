@@ -1,6 +1,6 @@
 .specialist_card_wrapper {
     width: 90%;
-    height: 220px;
+    min-height: 220px;
     background-color: #FFFFFF;
     color: black;
     border-radius: 12px;
@@ -46,7 +46,9 @@
 }
 
 .card_row {
-    height: 25px;
+    min-height: 25px;
+    align-items: flex-start;
+    padding-bottom: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,6 +84,12 @@
 .description_row {
     max-height: 80px;
     height: auto;
+}
+
+.p_info {
+    width: 50%;
+    height: auto;
+    text-align: right;
 }
 
 .p_description {

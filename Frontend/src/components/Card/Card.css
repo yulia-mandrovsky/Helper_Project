@@ -73,6 +73,7 @@
     margin: 4px;
     display: inline-block;
     justify-content: flex-start;
+    text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
@@ -200,6 +201,8 @@
 }
 
 .p_description {
+    width: 50%;
+    text-align: right;
     overflow-y: auto;
 }
 

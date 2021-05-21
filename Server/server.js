@@ -142,19 +142,24 @@ app.get('/users', authMiddleWare, function (req, res) {
     let sqlQuery = `
         SELECT * FROM users
         WHERE is_performer = true
+        AND id != ${req.user.id}
     `
     let categories = req.query.categories
+    let languages = req.query.languages
     let work_cities = req.query.work_cities
     let price_from = req.query.price_from
     let price_up = req.query.price_up
-    if (categories || work_cities || price_from || price_up) {
+    if (categories || languages || work_cities || price_from || price_up) {
         sqlQuery = sqlQuery + ` AND `
         let helper_conditions =[]
         if (categories) {
-            helper_conditions.push(`categories = "${categories}"`)
+            helper_conditions.push(`categories LIKE "%${categories}%"`)
+        }
+        if (languages) {
+            helper_conditions.push(`languages LIKE "%${languages}%"`)
         }
         if (work_cities) {
-            helper_conditions.push(`work_cities = "${work_cities}"`)
+            helper_conditions.push(`work_cities LIKE "%${work_cities}%"`)
         }
         if (price_from) {
             helper_conditions.push(`price >= ${price_from}`)
@@ -162,7 +167,7 @@ app.get('/users', authMiddleWare, function (req, res) {
         if (price_up) {
             helper_conditions.push(`price <= ${price_up}`)
         }
-        sqlQuery = sqlQuery + helper_conditions.join(' AND ')
+        sqlQuery = sqlQuery + helper_conditions.join(' AND ') + ';'
         console.log(sqlQuery)
     }
     
@@ -195,6 +200,8 @@ app.get('/tasks', authMiddleWare, function (req, res) {
         let conditions = []
         if (owner_id) {
             conditions.push(`owner_id = ${owner_id === "me" ? req.user.id : owner_id}`)
+        } else {
+            conditions.push(`owner_id != ${req.user.id}`)
         }
         if (status) {
             conditions.push(`status = '${status}'`)

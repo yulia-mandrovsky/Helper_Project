@@ -39,7 +39,7 @@ fetchTasks = () => {
       }
 
       fetchFilteredTasks = () => {
-        fetch(`http://localhost:2121/tasks?status=active${this.state.category.label ? '&category='+ this.state.category.label : '' }${this.state.city.label ? '&city=' + this.state.city.label : ''}${this.state.frequency.label ? '&frequency=' + this.state.frequency.label: ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
+        fetch(`http://localhost:2121/tasks?status=active${this.state.category ? '&category='+ this.state.category.value : '' }${this.state.city ? '&city=' + this.state.city.value : ''}${this.state.frequency ? '&frequency=' + this.state.frequency.value: ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
             headers: {
                 'Content-type': 'application/json',
                 "Authorization": localStorage.getItem("token")
@@ -91,9 +91,9 @@ fetchTasks = () => {
                     <h1 className="Title" >Find a Task</h1>
                 </header>
                 {/* TODO посенть на мульти поля категории и города и доработать фильтрацию */}
-                <Select name="Categorie" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />
-                <Select name="CitiesForWork" placeholder="Desirable Location" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler} />
-                <Select name="Frequency" placeholder="Frequency" styles={style} className="registration_input input select" options={options_frequency} onChange={this.changeFrequencyHandler} />
+                <Select isClearable name="Categorie" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />
+                <Select isClearable name="CitiesForWork" placeholder="Desirable Location" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler} />
+                <Select isClearable name="Frequency" placeholder="Frequency" styles={style} className="registration_input input select" options={options_frequency} onChange={this.changeFrequencyHandler} />
                 <div className="input_filter_price">
                     <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler} ></input>
                 </div>
