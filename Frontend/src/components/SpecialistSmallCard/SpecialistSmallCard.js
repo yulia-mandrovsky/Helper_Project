@@ -29,7 +29,7 @@ class SpecialistSmallCard extends Component {
                         <p>Price Per Hour</p><p className="p_info">{helper.price_per_hour}</p>
                     </div>
                     <div className="card_row">
-                        <p>Phone</p><p className="p_info">{helper.telephone}</p>
+                        <p>Phone</p><p className="p_info"><a href={`tel://${helper.telephone}`}>{helper.telephone}</a></p>
                     </div>
                     <div className="card_row description_row">
                         <p className="ongoing_card_label">Description</p>

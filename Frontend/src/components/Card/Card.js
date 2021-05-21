@@ -118,7 +118,7 @@ class Card extends Component {
                         <p>Total Price</p><p>{task.price}</p>
                     </div>
                     <div className="card_row">
-                        <p>Phone</p><p>{task.phone}</p>
+                        <p>Phone</p><p><a href={`tel://${task.phone}`}>{task.phone}</a></p>
                     </div>
                     {this.props.onStatusChange && <div className="card_row button_row">
                         <button className="opening" onClick={this.openingButtonHandler}>{this.state.button_text}</button>
