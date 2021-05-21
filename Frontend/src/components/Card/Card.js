@@ -120,10 +120,10 @@ class Card extends Component {
                     <div className="card_row">
                         <p>Phone</p><p><a href={`tel://${task.phone}`}>{task.phone}</a></p>
                     </div>
-                    {this.props.onStatusChange && <div className="card_row button_row">
+                    <div className="card_row button_row">
                         <button className="opening" onClick={this.openingButtonHandler}>{this.state.button_text}</button>
-                        <button className="card_button cancelling_button" onClick={this.activeToArchiveTaskHandler}>Cancel</button>
-                    </div>}
+                        {this.props.onStatusChange && <button className="card_button cancelling_button" onClick={this.activeToArchiveTaskHandler}>Cancel</button>}
+                    </div>
                 </div>
             </div>
         )

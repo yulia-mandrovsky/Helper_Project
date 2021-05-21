@@ -12,7 +12,7 @@ class Description extends Component {
                 <h2 className="post_title">Bring the best services to you</h2>
                 <img src={ArtWork} alt="Artwork"/>
                 <Link to="/sign-in" className="button link_button">Sign In</Link>
-                <Link to="/sign-up" className="button link_button">Sign Up</Link>
+                <Link to="/sign-up" className="button link_button yellow">Sign Up</Link>
             </div>
         )
     }
