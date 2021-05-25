@@ -11,7 +11,7 @@ module.exports = {
       ref  : 'origin/main',
       repo : 'git@github.com:yulia-solo/Helper_Project.git',
       path : '/home/admin/backend',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy' : 'cd Server && npm install && pm2 reload ecosystem.config.js --env production',
       "ssh_options": "StrictHostKeyChecking=no"
     }
   }
