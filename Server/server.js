@@ -162,10 +162,10 @@ app.get('/users', authMiddleWare, function (req, res) {
             helper_conditions.push(`work_cities LIKE "%${work_cities}%"`)
         }
         if (price_from) {
-            helper_conditions.push(`price >= ${price_from}`)
+            helper_conditions.push(`price_per_hour >= ${price_from}`)
         }
         if (price_up) {
-            helper_conditions.push(`price <= ${price_up}`)
+            helper_conditions.push(`price_per_hour <= ${price_up}`)
         }
         sqlQuery = sqlQuery + helper_conditions.join(' AND ') + ';'
         console.log(sqlQuery)
