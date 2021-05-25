@@ -105,12 +105,12 @@ class AddTask extends Component {
                 <Link to='/my-tasks'className="my_tasks_button">My Tasks</Link>
                 <h2 className="page_post_title">Please fill the form below</h2>
                 <Select name="Categorie" value={this.state.categorie} placeholder="Category *" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />
-                <input name="TaskName" value={this.state.task_name} placeholder="Title *" className="registration_input input" onChange={this.changeTaskNameHandler}></input><br/>
+                <input name="TaskName" type="text" value={this.state.task_name} placeholder="Title *" className="registration_input input" onChange={this.changeTaskNameHandler}></input><br/>
                 <Select name="CityOfTask" value={this.state.city}  placeholder="Location *" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
                 <Select name="FrequencyOfServices" value={this.state.frequency}  placeholder="Frequency of Services" styles={style} className="registration_input input select" options={options_frequency} onChange={this.changeFrequencyHandler}/>
-                <input name="PricePerHour" value={this.state.price}  placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}></input><br/>
-                <input name="Phone" value={this.state.phone}  placeholder="Phone *" className="registration_input input" onChange={this.changePhoneHandler}></input><br/>
-                <textarea name="AboutTask" value={this.state.description} placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
+                <input name="PricePerHour" type="number" value={this.state.price}  placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}></input><br/>
+                <input name="Phone" type="tel" value={this.state.phone}  placeholder="Phone *" className="registration_input input" onChange={this.changePhoneHandler}></input><br/>
+                <textarea name="AboutTask" type="text" value={this.state.description} placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
                 <button className="adder" disabled={!isActive} onClick={isActive ? this.clickHandler : null}>Next</button>
             </div>
         )

@@ -1,5 +1,5 @@
 import './App.css';
-import { Route , withRouter} from 'react-router-dom';
+import { Redirect, Route , withRouter} from 'react-router-dom';
 import RegistrationFirst from './components/registration_first/RegistrationFirst';
 import RegistrationSecond from './components/registration_second/RegistrationSecond'
 import Entrance from './components/entrance_form/Entrance';
@@ -14,16 +14,16 @@ import SpecialistsFilter from './components/ListOfSpecialists/ListOfSpecialists'
 function App() {
   return (
     <div className="App">
-      <Route path="/start" component={Description} />
-      <Route path="/sign-in" component={Entrance}/>
-      <Route path="/sign-up" component={RegistrationFirst} />
-      <Route path="/sign-up-helper" component={RegistrationSecond} />
-      <Route path="/home" component={Main} />
-      <Route path="/user-choice" component={ChoicePageUser} />
-      <Route path="/add-task" component={AddTask} />
-      <Route path="/specialists-list" component={SpecialistsFilter} />
-      <Route path="/tasks-filter" component={TasksFilter} />
-      <Route path="/my-tasks" component={MyTasks} />
+      <Route path="/" exact component={Description} />
+      <Route path="/sign-in" exact component={Entrance}/>
+      <Route path="/sign-up" exact component={RegistrationFirst} />
+      <Route path="/sign-up-helper" exact component={RegistrationSecond} />
+      <Route path="/home" exact component={Main} />
+      <Route path="/user-choice" exact component={ChoicePageUser} />
+      <Route path="/add-task" exact component={AddTask} />
+      <Route path="/specialists-list" exact component={SpecialistsFilter} />
+      <Route path="/tasks-filter" exact component={TasksFilter} />
+      <Route path="/my-tasks" exact component={MyTasks} />
     </div>
   );
 }
