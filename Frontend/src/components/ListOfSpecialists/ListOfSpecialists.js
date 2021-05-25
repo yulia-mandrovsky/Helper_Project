@@ -44,7 +44,7 @@ class SpecialistsFilter extends Component {
     }
 
     fetchFilteredHelpers = () => {
-        fetch(`http://localhost:2121/users?${this.state.categories ? '&categories=' + this.state.categories.value : ''}${this.state.languages ? '&languages=' + this.state.languages.value : ''}${this.state.work_cities ? '&work_cities=' + this.state.work_cities.value : ''}${this.state.price_from ? '&price_from=' + this.state.price_from : ''}${this.state.price_up ? '&price_up=' + this.state.price_up : ''}`, {
+        fetch(`process.env.REACT_APP_API_URL/users?${this.state.categories ? '&categories=' + this.state.categories.value : ''}${this.state.languages ? '&languages=' + this.state.languages.value : ''}${this.state.work_cities ? '&work_cities=' + this.state.work_cities.value : ''}${this.state.price_from ? '&price_from=' + this.state.price_from : ''}${this.state.price_up ? '&price_up=' + this.state.price_up : ''}`, {
             headers: {
                 'Content-type': 'application/json',
                 "Authorization": localStorage.getItem("token")

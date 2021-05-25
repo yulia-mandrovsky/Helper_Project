@@ -39,7 +39,7 @@ class Entrance extends Component {
     submitHandler = (event) => {
         event.preventDefault();
         const body = {email: `${this.state.email}`, password: `${this.state.password}`}
-        fetch('http://localhost:2121/users', {
+        fetch('process.env.REACT_APP_API_URL/users', {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

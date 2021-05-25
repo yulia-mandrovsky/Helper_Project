@@ -5,7 +5,10 @@ import ArtWork from './Artwork.png';
 
 class Description extends Component {
 
+
+
     render() {
+        console.log(process.env.REACT_APP_API_URL)
         return (
             <div className="wrapper">
                 <h1 className="description_title">Helper</h1>

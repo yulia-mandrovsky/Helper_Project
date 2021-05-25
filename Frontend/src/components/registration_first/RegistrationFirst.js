@@ -33,7 +33,7 @@ class RegistrationFirst extends Component {
             languages: this.state.languages.map((option) => option.value).join(', '), 
             isHelper: this.state.isHelper, password: this.state.password}
         console.log(body)
-        fetch('http://localhost:2121/register', {
+        fetch('process.env.REACT_APP_API_URL/register', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

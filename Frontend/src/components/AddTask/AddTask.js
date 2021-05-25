@@ -45,7 +45,7 @@ class AddTask extends Component {
             description: this.state.description
         }
         console.log(body)
-        fetch('http://localhost:2121/tasks', {
+        fetch('process.env.REACT_APP_API_URL/tasks', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
