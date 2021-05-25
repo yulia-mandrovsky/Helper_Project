@@ -11,7 +11,10 @@ module.exports = {
       ref  : 'origin/main',
       repo : 'git@github.com:yulia-solo/Helper_Project.git',
       path : '/home/admin/backend',
-      'post-deploy' : 'cd Server && npm install && pm2 reload ecosystem.config.js --env production',
+      env: {
+        DB_PASSWORD: '21041985',
+      },
+      "post-deploy" : 'cd Server && npm install && pm2 reload ecosystem.config.js --env production',
       "ssh_options": "StrictHostKeyChecking=no"
     }
   }
