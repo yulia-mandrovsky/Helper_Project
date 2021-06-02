@@ -17,7 +17,7 @@ componentDidMount() {
 }
 
 fetchMyTasks = (status) => {
-    fetch(`process.env.REACT_APP_API_URL/tasks?owner_id=me&status=${status}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/tasks?owner_id=me&status=${status}`, {
         headers: {
             'Content-type': 'application/json',
             "Authorization": localStorage.getItem("token")

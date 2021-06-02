@@ -65,7 +65,7 @@ class Card extends Component {
             status: "active"
         }
         console.log(this.props.task.task_id)
-        fetch(`http://localhost:2121/tasks/${this.props.task.task_id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/tasks/${this.props.task.task_id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',

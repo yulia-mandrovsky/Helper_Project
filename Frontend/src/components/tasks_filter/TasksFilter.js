@@ -39,7 +39,7 @@ fetchTasks = () => {
       }
 
       fetchFilteredTasks = () => {
-        fetch(`process.env.REACT_APP_API_URL/tasks?status=active${this.state.category ? '&category='+ this.state.category.value : '' }${this.state.city ? '&city=' + this.state.city.value : ''}${this.state.frequency ? '&frequency=' + this.state.frequency.value: ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/tasks?status=active${this.state.category ? '&category='+ this.state.category.value : '' }${this.state.city ? '&city=' + this.state.city.value : ''}${this.state.frequency ? '&frequency=' + this.state.frequency.value: ''}&price_from=${this.state.price_from}&price_up=${this.state.price_up}`, {
             headers: {
                 'Content-type': 'application/json',
                 "Authorization": localStorage.getItem("token")

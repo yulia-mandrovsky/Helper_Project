@@ -10,7 +10,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        fetch('process.env.REACT_APP_API_URL/me', {
+        fetch(`${process.env.REACT_APP_API_URL}/me`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',

@@ -7,12 +7,12 @@ module.exports = {
   deploy : {
     production : {
       user : 'admin',
-      host : 'ec2-18-224-37-172.us-east-2.compute.amazonaws.com',
+      host : '18.191.47.86',
       ref  : 'origin/main',
       repo : 'git@github.com:yulia-solo/Helper_Project.git',
       path : '/home/admin/backend',
       env: {
-        DB_PASSWORD: '21041985',
+        DB_PASSWORD: 'LeoMilano21!'
       },
       "post-deploy" : 'cd Server && npm install && pm2 reload ecosystem.config.js --env production',
       "ssh_options": "StrictHostKeyChecking=no"

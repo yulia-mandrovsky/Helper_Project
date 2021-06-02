@@ -35,9 +35,6 @@ class SpecialistSmallCard extends Component {
                         <p className="ongoing_card_label">Description</p>
                         <p className="p_description">{helper.description}</p>
                     </div>
-                    {/* <div className="card_row button_row">
-                        <button className="helper_card_button show_button contacts_button">Contacts</button>
-                    </div> */}
                 </div>
             </div>
         )

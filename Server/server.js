@@ -298,6 +298,7 @@ app.put('/tasks/:id', authMiddleWare, function (req, res) {
     })
 })
 
+// TODO port for development and production
 app.listen(2121, function () {
     console.log('Server works');
 });

@@ -1,5 +1,5 @@
 import './App.css';
-import { Redirect, Route , withRouter} from 'react-router-dom';
+import { Route , withRouter} from 'react-router-dom';
 import RegistrationFirst from './components/registration_first/RegistrationFirst';
 import RegistrationSecond from './components/registration_second/RegistrationSecond'
 import Entrance from './components/entrance_form/Entrance';

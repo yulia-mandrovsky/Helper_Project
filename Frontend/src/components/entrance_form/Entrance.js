@@ -38,8 +38,9 @@ class Entrance extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
+        console.log(process.env.REACT_APP_API_URI)
         const body = {email: `${this.state.email}`, password: `${this.state.password}`}
-        fetch('process.env.REACT_APP_API_URL/users', {
+        fetch(`${process.env.REACT_APP_API_URL}/users`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -61,6 +62,7 @@ class Entrance extends Component {
 
     render() {
         let isActive = this.isDataValid();
+        console.log(process.env.REACT_APP_API_URI)
         return (
             <div className="wrapper" >
                 <div className="arrow">

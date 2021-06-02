@@ -23,7 +23,7 @@ class RegistrationSecond extends Component {
     }
 
     componentDidMount() {
-        fetch('process.env.REACT_APP_API_URL/me', {
+        fetch(`${process.env.REACT_APP_API_URL}/me`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
@@ -66,7 +66,7 @@ class RegistrationSecond extends Component {
             price_per_hour: this.state.price_per_hour, 
             description: this.state.description
         }
-        fetch(`process.env.REACT_APP_API_URL/users/${this.state.id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/users/${this.state.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
