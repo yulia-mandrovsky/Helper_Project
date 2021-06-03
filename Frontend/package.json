@@ -15,7 +15,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "build:prod": "env-cmd .env yarn build",
+    "deploy": "npm run build && scp -i ~/Downloads/Yullka.pem -r build/* ubuntu@18.191.222.72:/home/ubuntu/frontend-helper",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
