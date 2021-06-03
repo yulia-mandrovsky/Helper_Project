@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "pm2 deploy ecosystem.config.js production",
     "start": "DB_PASSWORD=LeoMilano21 nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
