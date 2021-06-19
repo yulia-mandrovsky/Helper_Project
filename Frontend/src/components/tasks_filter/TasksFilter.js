@@ -18,7 +18,7 @@ class TasksFilter extends Component {
 
     state = {
         tasks: [],
-        active_status: 'ongoing',
+        active_status: 'active',
         category: '',
         city: '',
         frequency: '',
@@ -79,7 +79,7 @@ fetchTasks = () => {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="tasks_filter_wrapper">
                 <header className="header_wrapper">
                 <div className="arrow">
                     <Link to="/home">

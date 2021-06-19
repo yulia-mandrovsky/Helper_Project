@@ -5,13 +5,12 @@ import Card from '../Card/Card';
 
 
 
-
 class MyTasks extends Component {
     state = {
         tasks: [],
         active_status: 'ongoing'
     }
-
+// TODO to change active status depends on previous page
 componentDidMount() {
  this.fetchMyTasks('ongoing')
 }
@@ -41,7 +40,7 @@ changeActiveStatus = (newStatus) => {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="my_tasks_wrapper">
                 <header className="header_wrapper">
                     <div className="arrow">
                     <Link to="/add-task">
@@ -52,6 +51,7 @@ changeActiveStatus = (newStatus) => {
                     </div>
                     <h1 className="Title">My Tasks</h1>
                     </header>
+                    <Link to='/add-task'className="add_tasks_button">Add new task</Link>
                     <div className="select-wrapper">
                         <div onClick={() => {this.changeActiveStatus('ongoing')}} className={`select_block select_border ${this.state.active_status === 'ongoing' ? " active" : ''}`}>
                             <p>Draft</p>

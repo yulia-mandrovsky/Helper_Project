@@ -93,7 +93,8 @@ class AddTask extends Component {
     render() {
         let isActive = this.isDataValid()
         return (
-            <div className="wrapper" >
+            <div className="add_task_wrapper" >
+                <header className="add_task_header_wrapper">
                 <div className="arrow">
                 <Link to="/user-choice">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +103,7 @@ class AddTask extends Component {
                 </Link>
                 </div>
                 <h1 className="page_title">Add Task</h1>
+                </header>
                 <Link to='/my-tasks'className="my_tasks_button">My Tasks</Link>
                 <h2 className="page_post_title">Please fill the form below</h2>
                 <Select name="Categorie" value={this.state.categorie} placeholder="Category *" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoryHandler} />

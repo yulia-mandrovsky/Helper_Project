@@ -29,7 +29,7 @@ class ChoicePageUser extends Component {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="choice_page_wrapper">
                 <header className="header_wrapper">
                 <div className="arrow">
                     <Link to="/home">

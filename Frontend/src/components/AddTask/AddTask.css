@@ -4,11 +4,22 @@ html {
     background-color: #F0F3F8;
 }
 
-.wrapper {
+.add_task_wrapper {
     background-color: #F0F3F8;
     height: 100vh;
     box-sizing: border-box;
     position: relative;
+}
+
+.add_task_header_wrapper {
+    margin-top: 0;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    height: 118px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .arrow {
@@ -21,6 +32,7 @@ html {
 
 .page_title {
     margin-top: 30px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     font-family: Roboto;
     font-style: normal;
@@ -42,7 +54,7 @@ html {
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 16px;
     text-align: center;
     text-decoration: none;
@@ -52,14 +64,14 @@ html {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 0;
 }
 
 .page_post_title {
     font-family: Roboto;
-    margin-top: 34px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;

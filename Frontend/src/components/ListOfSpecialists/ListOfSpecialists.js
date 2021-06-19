@@ -14,21 +14,6 @@ const style = {
     })
   };
 
-let SpecialistsList = [
-    {
-        "id": 1,
-        "name": "some Specialist",
-        // поставить несколько городов и категорий???
-        "categorie": "cleaning",
-        "city": "Tel-Aviv-Yaffo",
-        "PricePerHour": 100,
-        "description": "some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text "
-    }
-]
-
-
-
-
 class SpecialistsFilter extends Component {
     state = {
         categories: '',
@@ -87,7 +72,7 @@ class SpecialistsFilter extends Component {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="list_wrapper">
                 <header className="header_wrapper">
                 <div className="arrow">
                     <Link to="/user-choice">
