@@ -25,6 +25,7 @@ class RegistrationFirst extends Component {
         password: '',
         // validation
         formErrors: {email: '', telephone: '', numberID: '', password: ''},
+        usernameValid: false,
         emailValid: false,
         passwordValid: false,
         numberIDValid: false,
@@ -35,12 +36,18 @@ class RegistrationFirst extends Component {
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
+        let usernameValid = this.state.usernameValid;
         let emailValid = this.state.emailValid;
         let telephoneValid = this.state.telephoneValid;
         let numberIDValid = this.state.numberIDValid;
         let passwordValid = this.state.passwordValid;
       switch(fieldName) {
 
+          case 'username':
+              const usernameFormat = /^[A-Za-z ]+$/;
+              usernameValid = value.match(usernameFormat);
+              fieldValidationErrors.username = usernameValid ? '' : ' is invalid';
+              break;
           case 'email':
             const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             emailValid = value.match(emailFormat);
