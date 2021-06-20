@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
 import { options_language, options_cities } from '../../Values';
+import FormErrors from '../FormErrors/FormErrors'
 import './RegistrationFirst.css'
 
   const style = {
@@ -14,20 +15,101 @@ import './RegistrationFirst.css'
 
 class RegistrationFirst extends Component {
     state = {
-        "username": '',
-        "email": '',
-        "city": '',
-        "telephone": '',
-        "numberID": '',
-        "languages": [],
-        "isHelper": false,
-        "password": ''
+        username: '',
+        email: '',
+        city: '',
+        telephone: '',
+        numberID: '',
+        languages: [],
+        isHelper: false,
+        password: '',
+        // validation
+        formErrors: {email: '', telephone: '', numberID: '', password: ''},
+        usernameValid: false,
+        emailValid: false,
+        passwordValid: false,
+        numberIDValid: false,
+        telephoneValid: false,
+        formValid: false
     }
 
-    
+
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let usernameValid = this.state.usernameValid;
+        let emailValid = this.state.emailValid;
+        let telephoneValid = this.state.telephoneValid;
+        let numberIDValid = this.state.numberIDValid;
+        let passwordValid = this.state.passwordValid;
+      switch(fieldName) {
+
+          case 'username':
+            const usernameFormat = /^[A-Za-z ]+$/;
+            usernameValid = value.match(usernameFormat);
+            fieldValidationErrors.username = usernameValid ? '' : ' is invalid';
+            break;
+          case 'email':
+            const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            emailValid = value.match(emailFormat);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+          case 'telephone':
+            const telephoneFormat = /^0(5[^7]|[2-4]|[8-9]|7[0-9])[0-9]{7}$/;
+            telephoneValid = value.match(telephoneFormat) ;
+            fieldValidationErrors.telephone = telephoneValid ? '' : ' is invalid';
+            break;
+          case 'numberID':
+            const numberIDFormat = /^\d{9}$/;
+            numberIDValid = value.match(numberIDFormat);
+            fieldValidationErrors.numberID = numberIDValid ? '': ' is invalid';
+            break;
+          case 'password':
+            const passwordFormat = /^[A-Za-z]\w{7,14}$/;
+            passwordValid = value.match(passwordFormat);
+            fieldValidationErrors.password = passwordValid ? '': ' is invalid, need to contain only characters, numeric digits and underscore';
+            break;
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        telephoneValid: telephoneValid,
+                        numberIDValid: numberIDValid,
+                        passwordValid: passwordValid
+                      }, this.validateForm);
+      }
+
+      validateForm() {
+        this.setState({formValid: this.state.usernameValid &&
+                                  this.state.emailValid &&
+                                  this.state.telephoneValid&&
+                                  this.state.numberIDValid&&
+                                  this.state.passwordValid});
+      }
+
+    handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value},
+        () => { this.validateField(name, value) });
+    }
+
+    changeCityHandler = (newCity) => {
+        this.setState({city: newCity})
+        console.log(this.state.city)
+    }
+
+    changeLanguageHandler = (newLanguages) => {
+        this.setState({languages: newLanguages})
+    }
+
+    changeIsHelperHandler = (event) => {
+        this.setState({isHelper: event.target.checked})
+    }
 
     clickHandler = (event) => {
         event.preventDefault();
+        console.log('buuuu')
         const body = {username: this.state.username, email: this.state.email, 
             city: this.state.city, telephone: this.state.telephone, numberID: this.state.numberID, 
             languages: this.state.languages.map((option) => option.value).join(', '), 
@@ -53,54 +135,7 @@ class RegistrationFirst extends Component {
         })
     }
 
-    isDataValid = () => {
-        if (this.state.username !== '' && this.state.email !== '' && this.state.telephone !== '' && this.state.password !== '') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    changeUsernameHandler = (event) => {
-        this.setState({username: event.target.value})
-        console.log(this.state.username)
-    }
-
-    changeEmailHandler = (event) => {
-        this.setState({email: event.target.value})
-        console.log(this.state.email)
-    }
-
-    changeCityHandler = (newCity) => {
-        this.setState({city: newCity})
-        console.log(this.state.city)
-    }
-
-    changePhoneHandler = (event) => {
-        this.setState({telephone: event.target.value})
-        console.log(this.state.telephone)
-    }
-
-    changeNumberIDHandler = (event) => {
-        this.setState({numberID: event.target.value})
-        console.log(this.state.numberID)
-    }
-
-    changeLanguageHandler = (newLanguages) => {
-        this.setState({languages: newLanguages})
-    }
-
-    changeIsHelperHandler = (event) => {
-        this.setState({isHelper: event.target.checked})
-    }
-
-    changePasswordHandler = (event) => {
-        this.setState({password: event.target.value})
-        console.log(this.state.password)
-    }
-
     render() {
-        let isActive = this.isDataValid();
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -112,11 +147,11 @@ class RegistrationFirst extends Component {
                 </div>
                 <h1 className="registration_title">Sign Up</h1>
                 <h2 className="registration_post_title">Please fill the form below</h2>
-                <input name="FullName" value={this.state.username} placeholder="Full Name *" className="registration_input input" onChange={this.changeUsernameHandler}></input>
-                <input name="email" value={this.state.email} placeholder="Email *" className="registration_input input" onChange={this.changeEmailHandler}></input>
-                <Select name="City" value={this.state.city}  placeholder="City" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
-                <input name="Telephone" value={this.state.telephone} placeholder="Phone *" className="registration_input input" onChange={this.changePhoneHandler}></input>
-                <input name="NumberID" value={this.state.numberID} placeholder="ID" className="registration_input input" onChange={this.changeNumberIDHandler}></input>
+                <input name="username" value={this.state.username} placeholder="Full Name *" className="registration_input input" onChange={this.handleUserInput}></input>
+                <input name="email" value={this.state.email} placeholder="Email *" className="registration_input input" onChange={this.handleUserInput}></input>
+                <Select name="city" value={this.state.city}  placeholder="City" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
+                <input name="telephone" value={this.state.telephone} placeholder="Phone *" className="registration_input input" onChange={this.handleUserInput}></input>
+                <input name="numberID" value={this.state.numberID} placeholder="ID" className="registration_input input" onChange={this.handleUserInput}></input>
                 <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="registration_input input select_language select" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
                 <label>
                     <input className="checkbox_performer"
@@ -126,8 +161,11 @@ class RegistrationFirst extends Component {
                         />
                      Want to be a helper
                 </label>
-                <input type='password' name="Password" placeholder="Password *" className="registration_input input" onChange={this.changePasswordHandler}></input>
-                <button className="sign_up" disabled={!isActive} onClick={isActive ? this.clickHandler : null}>Sign Up</button>
+                <input type='password' name="password" placeholder="Password *" className="registration_input input" onChange={this.handleUserInput}></input>
+                <div className='panel panel-default'>
+                <FormErrors formErrors={this.state.formErrors} />
+                </div>
+                <button className="sign_up" disabled={!this.state.formValid} onClick={this.state.formValid ? this.clickHandler : null}>Sign Up</button>
                 
             </div>
         )
