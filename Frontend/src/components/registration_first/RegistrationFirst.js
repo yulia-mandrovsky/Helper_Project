@@ -151,7 +151,7 @@ class RegistrationFirst extends Component {
                 <input name="email" value={this.state.email} placeholder="Email *" className="registration_input input" onChange={this.handleUserInput}></input>
                 <Select name="city" value={this.state.city}  placeholder="City" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCityHandler}/>
                 <input name="telephone" value={this.state.telephone} placeholder="Phone *" className="registration_input input" onChange={this.handleUserInput}></input>
-                <input name="numberID" value={this.state.numberID} placeholder="ID" className="registration_input input" onChange={this.handleUserInput}></input>
+                <input name="numberID" value={this.state.numberID} placeholder="ID *" className="registration_input input" onChange={this.handleUserInput}></input>
                 <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="registration_input input select_language select" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
                 <label>
                     <input className="checkbox_performer"
