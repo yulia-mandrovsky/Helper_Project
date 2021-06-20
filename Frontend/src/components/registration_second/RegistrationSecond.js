@@ -97,13 +97,13 @@ class RegistrationSecond extends Component {
                         </svg>
                     </Link>
                 </div>
-                <h1 className="registration_title">For perfomers</h1>
-                <h2 className="registration_post_title">Please write your information below<br/> if you want to be a helper</h2>
-                <Select name="Categories" value={this.state.categories} placeholder="Categories" styles={style} className="registration_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler} />
-                <Select name="CitiesForWork" value={this.state.work_cities} placeholder="Cities convenient for work" styles={style} className="registration_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
-                <input name="PricePerHour" value={this.state.price_per_hour} placeholder="Price per hour, NIS" className="registration_input input" onChange={this.changePriceHandler}/><br/>
-                <textarea name="AboutPerformer" value={this.state.description} placeholder="About you" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
-                <button className="sign_up" disabled={this.state.isActive} onClick={this.clickHandler}>Let's start</button>
+                <h1 className="registration_second_title">For perfomers</h1>
+                <h2 className="registration_second_post_title">Please write your information below<br/> if you want to be a helper</h2>
+                <Select name="Categories" value={this.state.categories} placeholder="Categories" styles={style} className="registration_second_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler} />
+                <Select name="CitiesForWork" value={this.state.work_cities} placeholder="Cities convenient for work" styles={style} className="registration_second_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
+                <input name="PricePerHour" value={this.state.price_per_hour} placeholder="Price per hour, NIS" className="registration_second_input input" onChange={this.changePriceHandler}/><br/>
+                <textarea name="AboutPerformer" value={this.state.description} placeholder="About you" className="registration_second_textarea" onChange={this.changeDescriptionHandler}></textarea>
+                <button className="registration_second_sign_up" disabled={this.state.isActive} onClick={this.clickHandler}>Let's start</button>
                 {/* <textarea name="AboutTask" value={this.state.description}  placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
  */}
             </div>

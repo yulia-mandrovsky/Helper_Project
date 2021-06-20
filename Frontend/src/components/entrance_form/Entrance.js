@@ -25,9 +25,8 @@ class Entrance extends Component {
             fieldValidationErrors.email = emailValid ? '' : ' is invalid';
             break;
           case 'password':
-            const passwordFormat = /^[A-Za-z]\w{7,14}$/;
-            passwordValid = value.match(passwordFormat);
-            fieldValidationErrors.password = passwordValid ? '': ' is invalid, 7-14 characters, need to contain only characters, numeric digits and underscore';
+            passwordValid = value.length() >= 8;
+            fieldValidationErrors.password = passwordValid ? '': ' is tooshort';
             break;
           default:
             break;
