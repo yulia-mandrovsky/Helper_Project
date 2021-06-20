@@ -74,7 +74,7 @@ class Entrance extends Component {
     render() {
         // console.log(process.env.REACT_APP_API_URI)
         return (
-            <div className="wrapper" >
+            <div className="entrance_wrapper" >
                 <div className="arrow">
                 <Link to="/">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@ class Entrance extends Component {
                     </svg>
                 </Link>
                 </div>
-                <h1 className="registration_title">Helper</h1>
+                <h1 className="entrance_title">Helper</h1>
                 <div>
                     <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="0.524414" y="0.510498" width="70" height="70" rx="16" fill="#007AFF"/>
@@ -95,14 +95,14 @@ class Entrance extends Component {
                         </g>
                     </svg>
                 </div>
-                <h2 className="registration_post_title">Bring the best services to you</h2>
+                <h2 className="entrance_post_title">Bring the best services to you</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.handleUserInput} ></input>
-                    <input name="password" value={this.state.password} type="password" placeholder="Password" className="registration_input input" onChange={this.handleUserInput}></input>
+                    <input name="email" value={this.state.email} placeholder="Email" className="entrance_input input" onChange={this.handleUserInput} ></input>
+                    <input name="password" value={this.state.password} type="password" placeholder="Password" className="entrance_input input" onChange={this.handleUserInput}></input>
                     <div className='panel panel-default'>
                         <FormErrors formErrors={this.state.formErrors} />
                     </div>
-                    <button type="submit" className="sign_in" disabled={!this.state.formValid} >Sign In</button>
+                    <button type="submit" className="entrance_sign_in" disabled={!this.state.formValid} >Sign In</button>
                 </form>
             </div>
         )

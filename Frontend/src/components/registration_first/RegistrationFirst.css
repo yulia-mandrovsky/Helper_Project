@@ -318,6 +318,7 @@ html {
 
 /* Large */
 @media screen and (min-width: 980px) and (max-width: 1220px) {
+    
     .wrapper {
         background-color: #F0F3F8;
         height: 100vh;
@@ -423,6 +424,7 @@ html {
 
 /* XLarge */
 @media screen and (min-width: 1221px) {
+
     .wrapper {
         background-color: #F0F3F8;
         height: 100vh;
@@ -482,7 +484,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 18px; 
         color: #8F9BB3;
     }
@@ -524,5 +526,4 @@ html {
     .sign_up_registration_first:disabled {
         opacity: 50%;
     }
-
 }
