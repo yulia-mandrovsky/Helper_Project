@@ -44,33 +44,29 @@ class RegistrationFirst extends Component {
       switch(fieldName) {
 
           case 'username':
-              const usernameFormat = /^[A-Za-z ]+$/;
-              usernameValid = value.match(usernameFormat);
-              fieldValidationErrors.username = usernameValid ? '' : ' is invalid';
-              break;
+            const usernameFormat = /^[A-Za-z ]+$/;
+            usernameValid = value.match(usernameFormat);
+            fieldValidationErrors.username = usernameValid ? '' : ' is invalid';
+            break;
           case 'email':
             const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             emailValid = value.match(emailFormat);
             fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-            console.log(emailValid)
             break;
           case 'telephone':
             const telephoneFormat = /^0(5[^7]|[2-4]|[8-9]|7[0-9])[0-9]{7}$/;
             telephoneValid = value.match(telephoneFormat) ;
             fieldValidationErrors.telephone = telephoneValid ? '' : ' is invalid';
-            console.log(telephoneValid)
             break;
           case 'numberID':
             const numberIDFormat = /^\d{9}$/;
             numberIDValid = value.match(numberIDFormat);
             fieldValidationErrors.numberID = numberIDValid ? '': ' is invalid';
-            console.log(numberIDValid)
             break;
           case 'password':
             const passwordFormat = /^[A-Za-z]\w{7,14}$/;
             passwordValid = value.match(passwordFormat);
-            fieldValidationErrors.password = passwordValid ? '': ' is invalid. Need to contain only characters, numeric digits and underscore.';
-            console.log(passwordValid)
+            fieldValidationErrors.password = passwordValid ? '': ' is invalid, need to contain only characters, numeric digits and underscore';
             break;
           default:
             break;
@@ -84,7 +80,8 @@ class RegistrationFirst extends Component {
       }
 
       validateForm() {
-        this.setState({formValid: this.state.emailValid &&
+        this.setState({formValid: this.state.usernameValid &&
+                                  this.state.emailValid &&
                                   this.state.telephoneValid&&
                                   this.state.numberIDValid&&
                                   this.state.passwordValid});
