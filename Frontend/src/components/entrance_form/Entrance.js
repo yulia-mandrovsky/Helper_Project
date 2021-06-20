@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FormErrors from '../FormErrors/FormErrors';
 import './Entrance.css'
 
 class Entrance extends Component {
@@ -89,7 +90,10 @@ class Entrance extends Component {
                 <form onSubmit={this.submitHandler}>
                     <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.changeEmailHandler} ></input>
                     <input name="password" value={this.state.password} type="password" placeholder="Password" className="registration_input input" onChange={this.changePasswordHandler}></input>
-                    <button type="submit" className="sign_up" disabled={!isActive} >Sign In</button>
+                    <div className='panel panel-default'>
+                        <FormErrors formErrors={this.state.formErrors} />
+                    </div>
+                    <button type="submit" className="sign_in" disabled={!isActive} >Sign In</button>
                 </form>
             </div>
         )

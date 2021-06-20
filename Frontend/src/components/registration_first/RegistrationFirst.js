@@ -24,7 +24,7 @@ class RegistrationFirst extends Component {
         isHelper: false,
         password: '',
         // validation
-        formErrors: {email: '', telephone: '', numberID: '', password: ''},
+        formErrors: {username: '', email: '', telephone: '', numberID: '', password: ''},
         usernameValid: false,
         emailValid: false,
         passwordValid: false,

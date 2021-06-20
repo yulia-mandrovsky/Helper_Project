@@ -60,7 +60,7 @@ html {
 }
 
 
-.sign_up {
+.sign_in {
     height: 56px;
     width: 90%;
     margin-top: 45px;
@@ -77,6 +77,6 @@ html {
     color: #FFFFFF;
 }
 
-.sign_up:disabled {
+.sign_in:disabled {
     opacity: 50%;
 }
