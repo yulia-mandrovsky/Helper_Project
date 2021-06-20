@@ -7,35 +7,47 @@ class Entrance extends Component {
     state = {
         email: "",
         password: "",
-        token: ""
+        token: "",
+        formErrors: {email: '', password: ''},
+        emailValid: false,
+        passwordValid: false,
     }
 
-    isDataValid = () => {
-        if (this.state.email !== '' && this.state.password !== '') {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let passwordValid = this.state.passwordValid;
+      switch(fieldName) {
 
-    changeEmailHandler = (event) => {
-        if (this.state.password !== "" && event.target.value !== "") {
-            this.setState({isActive: true})
-        } else {
-            this.setState({isActive: false})
+          case 'email':
+            const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            emailValid = value.match(emailFormat);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+          case 'password':
+            const passwordFormat = /^[A-Za-z]\w{7,14}$/;
+            passwordValid = value.match(passwordFormat);
+            fieldValidationErrors.password = passwordValid ? '': ' is invalid, 7-14 characters, need to contain only characters, numeric digits and underscore';
+            break;
+          default:
+            break;
         }
-        this.setState({ email: event.target.value })
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        passwordValid: passwordValid
+                      }, this.validateForm);
       }
 
+      validateForm() {
+        this.setState({formValid: this.state.emailValid &&
+                                  this.state.passwordValid});
+      }
 
-    changePasswordHandler = (event) => {
-        if (this.state.email !== "" && event.target.value !== "") {
-            this.setState({isActive: true})
-        } else {
-            this.setState({isActive: false})
-        }
-    this.setState({ password: event.target.value })
-    }
+      handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value},
+        () => { this.validateField(name, value) })};
 
     submitHandler = (event) => {
         event.preventDefault();
@@ -56,14 +68,12 @@ class Entrance extends Component {
             localStorage.setItem('token', data.token)
             if (data.token) {
                 this.props.history.push("/home");
-            }
-        
+        } 
     })
 }
 
     render() {
-        let isActive = this.isDataValid();
-        console.log(process.env.REACT_APP_API_URI)
+        // console.log(process.env.REACT_APP_API_URI)
         return (
             <div className="wrapper" >
                 <div className="arrow">
@@ -88,16 +98,17 @@ class Entrance extends Component {
                 </div>
                 <h2 className="registration_post_title">Bring the best services to you</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.changeEmailHandler} ></input>
-                    <input name="password" value={this.state.password} type="password" placeholder="Password" className="registration_input input" onChange={this.changePasswordHandler}></input>
+                    <input name="email" value={this.state.email} placeholder="Email" className="registration_input input" onChange={this.handleUserInput} ></input>
+                    <input name="password" value={this.state.password} type="password" placeholder="Password" className="registration_input input" onChange={this.handleUserInput}></input>
                     <div className='panel panel-default'>
                         <FormErrors formErrors={this.state.formErrors} />
                     </div>
-                    <button type="submit" className="sign_in" disabled={!isActive} >Sign In</button>
+                    <button type="submit" className="sign_in" disabled={!this.state.formValid} >Sign In</button>
                 </form>
             </div>
         )
     }
 }
+
 
 export default Entrance;
