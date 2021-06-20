@@ -66,7 +66,7 @@ class RegistrationFirst extends Component {
           case 'password':
             const passwordFormat = /^[A-Za-z]\w{7,14}$/;
             passwordValid = value.match(passwordFormat);
-            fieldValidationErrors.password = passwordValid ? '': ' is invalid, need to contain only characters, numeric digits and underscore';
+            fieldValidationErrors.password = passwordValid ? '': ' is invalid, 7-14 characters, need to contain only characters, numeric digits and underscore';
             break;
           default:
             break;
