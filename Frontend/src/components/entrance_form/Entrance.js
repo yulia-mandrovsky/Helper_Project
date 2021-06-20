@@ -25,7 +25,7 @@ class Entrance extends Component {
             fieldValidationErrors.email = emailValid ? '' : ' is invalid';
             break;
           case 'password':
-            passwordValid = value.length() >= 8;
+            passwordValid = value.length >= 8;
             fieldValidationErrors.password = passwordValid ? '': ' is tooshort';
             break;
           default:
