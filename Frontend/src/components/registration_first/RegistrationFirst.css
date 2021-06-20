@@ -99,5 +99,5 @@ label {
 }
 
 .sign_up:disabled {
-    color: transparent;
+    opacity: 50%;
 }
