@@ -26,7 +26,7 @@ class Entrance extends Component {
             break;
           case 'password':
             passwordValid = value.length >= 8;
-            fieldValidationErrors.password = passwordValid ? '': ' is tooshort';
+            fieldValidationErrors.password = passwordValid ? '': ' is too short';
             break;
           default:
             break;
