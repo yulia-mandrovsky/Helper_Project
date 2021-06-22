@@ -1,152 +1,508 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html {
-    background-color: #F0F3F8;
+/* XSmall */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    html {
+        background-color: #F0F3F8;
+    }
+
+    .add_task_wrapper {
+        background-color: #F0F3F8;
+        height: 100vh;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .add_task_header_wrapper {
+        margin-top: 0;
+        padding-top: 20px;
+        background-color: #FFFFFF;
+        height: 118px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .arrow {
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 16px;
+    }
+
+    .add_task_title {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 32px;
+        text-align: center;
+        color: #222B45;
+    }
+
+    .add_tasks_my_tasks_button {
+        height: 56px;
+        width: 90%;
+        margin-top: 45px;
+        background-color: #FFCF00;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .add_task_post_title {
+        font-family: Roboto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #8F9BB3;
+    }
+
+    .add_task_input {
+        height: 56px;
+        width: 90%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
+
+
+    label {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 15px; 
+        color: #8F9BB3;
+    }
+
+    .add_task_select {
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        padding-top: 10px;
+        padding-left: 8px;
+        align-items: center;
+        height: 56px;
+        width: 90%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
+    }
+
+    .add_task_textarea {
+        padding: 10px;
+        height: 200px;
+        width: 90%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
+
+    .add_task_button {
+        height: 56px;
+        width: 90%;
+        margin-top: 45px;
+        background-color: #007AFF;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .add_task_button:disabled {
+        opacity: 50%;
+    }
 }
 
-.add_task_wrapper {
-    background-color: #F0F3F8;
-    height: 100vh;
-    box-sizing: border-box;
-    position: relative;
+/* Small */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    html {
+        background-color: #F0F3F8;
+    }
+
+    .add_task_wrapper {
+        background-color: #F0F3F8;
+        height: 100vh;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .add_task_header_wrapper {
+        margin-top: 0;
+        padding-top: 20px;
+        background-color: #FFFFFF;
+        height: 118px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .arrow {
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 16px;
+    }
+
+    .add_task_title {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 32px;
+        text-align: center;
+        color: #222B45;
+    }
+
+    .add_tasks_my_tasks_button {
+        height: 56px;
+        width: 60%;
+        margin-top: 45px;
+        background-color: #FFCF00;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .add_task_post_title {
+        font-family: Roboto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #8F9BB3;
+    }
+
+    .add_task_input {
+        height: 56px;
+        width: 60%;
+        margin-top: 0px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
+
+
+    label {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px; 
+        color: #8F9BB3;
+    }
+
+    .add_task_select {
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        padding-top: 10px;
+        padding-left: 8px;
+        align-items: center;
+        height: 56px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
+    }
+
+    .add_task_textarea {
+        padding: 10px;
+        height: 200px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
+
+    .add_task_button {
+        height: 56px;
+        width: 60%;
+        margin-top: 45px;
+        background-color: #007AFF;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .add_task_button:disabled {
+        opacity: 50%;
+    }
 }
 
-.add_task_header_wrapper {
-    margin-top: 0;
-    padding-top: 20px;
-    background-color: #FFFFFF;
-    height: 118px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
+/* Medium */
+@media screen and (min-width: 769px) and (max-width: 979px) {
 
-.arrow {
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 16px;
-}
+    html {
+        background-color: #F0F3F8;
+    }
 
-.page_title {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 32px;
-    text-align: center;
-    color: #222B45;
-}
+    .add_task_wrapper {
+        background-color: #F0F3F8;
+        height: 100vh;
+        box-sizing: border-box;
+        position: relative;
+    }
 
-.my_tasks_button {
-    height: 56px;
-    width: 90%;
-    margin-top: 45px;
-    background-color: #FFCF00;
-    border: none;
-    border-radius: 12px;
-    filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
+    .add_task_header_wrapper {
+        margin-top: 0;
+        padding-top: 20px;
+        background-color: #FFFFFF;
+        height: 118px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 
-.page_post_title {
-    font-family: Roboto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 20px;
-    text-align: center;
-    color: #8F9BB3;
-}
+    .arrow {
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 16px;
+    }
 
-.registration_input_task {
-    height: 56px;
-    width: 90%;
-    margin-top: 16px;
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    border: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    padding-left: 10px;
-    box-sizing: border-box;
-}
+    .add_task_title {
+        margin-top: 32px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 32px;
+        text-align: center;
+        color: #222B45;
+    }
+
+    .add_tasks_my_tasks_button {
+        height: 56px;
+        width: 55%;
+        margin-top: 45px;
+        background-color: #FFCF00;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .add_task_post_title {
+        font-family: Roboto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #8F9BB3;
+    }
+
+    .add_task_input {
+        height: 56px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
 
 
-label {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px; 
-    color: #8F9BB3;
-}
+    label {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px; 
+        color: #8F9BB3;
+    }
 
-.select {
-    margin-left: 5%;
-    width: 90%;
-    border: none;
-    padding-top: 10px;
-    align-items: center;
-}
+    .add_task_select {
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        padding-top: 10px;
+        padding-left: 8px;
+        align-items: center;
+        height: 56px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
+    }
 
-.textarea {
-    padding: 10px;
-    height: 200px;
-    width: 90%;
-    margin-top: 16px;
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    border: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    box-sizing: border-box;
-}
+    .add_task_textarea {
+        padding: 10px;
+        height: 200px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
 
-.adder {
-    height: 56px;
-    width: 90%;
-    margin-top: 45px;
-    background-color: #007AFF;
-    border: none;
-    border-radius: 12px;
-    filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 15px;
-    line-height: 16px;
-    text-align: center;
-    color: #FFFFFF;
-}
+    .add_task_button {
+        height: 56px;
+        width: 60%;
+        margin-top: 45px;
+        background-color: #007AFF;
+        border: none;
+        border-radius: 12px;
+        filter: drop-shadow(0px 7px 15px rgba(0, 149, 255, 0.280567));
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+    }
 
-.adder:disabled {
-    opacity: 50%;
+    .add_task_button:disabled {
+        opacity: 50%;
+    }
 }

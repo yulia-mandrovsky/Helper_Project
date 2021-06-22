@@ -30,7 +30,7 @@ class ChoicePageUser extends Component {
     render() {
         return (
             <div className="choice_page_wrapper">
-                <header className="header_wrapper">
+                <header className="choice_header_wrapper">
                 <div className="arrow">
                     <Link to="/home">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,22 +38,22 @@ class ChoicePageUser extends Component {
                         </svg>
                     </Link>
                 </div>
-                    <h2 className="small_title" >Make your choice</h2>
+                    <h2 className="choice_header_small_title" >Make your choice</h2>
                 </header>
-                {this.state.user && <h1 className="hi_title">Hi, {this.state.user.username}!</h1>}
-                <h2 className="small_title title" >What do you want to do?</h2>
+                {this.state.user && <h1 className="choice_hi_title">Hi, {this.state.user.username}!</h1>}
+                <h2 className="choice_small_title" >What do you want to do?</h2>
                 
-                <div className="categories">
-                    <Link to="/add-task" className="categorie">
-                        <div>
-                            <img src={Task} alt="Task" height="100px" />
-                            <h3>Add a Task</h3>
+                <div className="choice_categories_wrapper">
+                    <Link to="/add-task" className="choice_categorie">
+                        <div className="choice_categorie_wrapper">
+                            <img src={Task} alt="Task" className="choice_categorie_image" />
+                            <h3 className="choice_categorie_header">Add a Task</h3>
                         </div>
                     </Link>
-                    <Link to="/specialists-list" className="categorie">
-                        <div>
-                            <img src={Specialist} alt="Specialist" height="100px" />
-                            <h3>Find a Helper</h3>
+                    <Link to="/specialists-list" className="choice_categorie">
+                        <div className="choice_categorie_wrapper">
+                            <img src={Specialist} alt="Specialist" className="choice_categorie_image" />
+                            <h3 className="choice_categorie_header">Find a Helper</h3>
                         </div>
                     </Link>
                 </div>

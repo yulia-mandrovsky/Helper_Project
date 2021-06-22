@@ -36,8 +36,8 @@ html {
     
     .registration_first_post_title {
         font-family: Roboto;
-        margin-top: 34px;
-        margin-bottom: 30px;
+        margin-top: 25px;
+        margin-bottom: 20px;
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
@@ -58,8 +58,12 @@ html {
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
+    }
+
+    .phone_input {
+        margin-top: 0;
     }
     
     
@@ -71,20 +75,33 @@ html {
         line-height: 18px; 
         color: #8F9BB3;
     }
-    
+
     .select_language {
-        margin-left: 5%;
-        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 90%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .checkbox_performer {
         border: none;
     }
     
-    .sign_up {
+    .sign_up_registration_first {
         height: 56px;
         width: 90%;
         margin-top: 45px;
@@ -160,8 +177,12 @@ html {
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
+    }
+
+    .phone_input {
+        margin-top: 0;
     }
     
     label {
@@ -172,14 +193,26 @@ html {
         line-height: 18px; 
         color: #8F9BB3;
     }
-    
+
     .select_language {
         margin-left: auto;
         margin-right: auto;
-        width: 60%;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 60%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .checkbox_performer {
@@ -197,7 +230,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;
@@ -263,8 +296,12 @@ html {
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
+    }
+
+    .phone_input {
+        margin-top: 0;
     }
     
     label {
@@ -279,10 +316,22 @@ html {
     .select_language {
         margin-left: auto;
         margin-right: auto;
-        width: 55%;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 55%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
 
     .registration_first_label {
@@ -340,7 +389,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
-        font-size: 48px;
+        font-size: 40px;
         line-height: 32px;
         text-align: center;
         color: #222B45;
@@ -352,7 +401,7 @@ html {
         margin-bottom: 30px;
         font-style: normal;
         font-weight: normal;
-        font-size: 26px;
+        font-size: 22px;
         line-height: 20px;
         text-align: center;
         color: #8F9BB3;
@@ -360,7 +409,7 @@ html {
     
     .registration_first_input {
         height: 56px;
-        width: 52%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -368,10 +417,14 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
+    }
+
+    .phone_input {
+        margin-top: 0;
     }
     
     label {
@@ -386,14 +439,26 @@ html {
     .select_language {
         margin-left: auto;
         margin-right: auto;
-        width: 52%;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 45%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
 
     .registration_first_label {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .checkbox_performer {
@@ -402,7 +467,7 @@ html {
     
     .sign_up_registration_first {
         height: 60px;
-        width: 52%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -411,7 +476,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;
@@ -441,7 +506,7 @@ html {
     }
     
     .registration_first_title {
-        margin-top: 70px;
+        margin-top: 58px;
         box-sizing: border-box;
         font-family: Roboto;
         font-style: normal;
@@ -458,7 +523,7 @@ html {
         margin-bottom: 40px;
         font-style: normal;
         font-weight: normal;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 20px;
         text-align: center;
         color: #8F9BB3;
@@ -466,7 +531,7 @@ html {
     
     .registration_first_input {
         height: 56px;
-        width: 52%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -474,17 +539,21 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
+    }
+
+    .phone_input {
+        margin-top: 0;
     }
     
     label {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px; 
         color: #8F9BB3;
     }
@@ -492,10 +561,22 @@ html {
     .select_language {
         margin-left: auto;
         margin-right: auto;
-        width: 52%;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 45%;
+        margin-top: 16px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
 
     .registration_first_label {
@@ -508,7 +589,7 @@ html {
     
     .sign_up_registration_first {
         height: 60px;
-        width: 52%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -517,7 +598,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;

@@ -98,14 +98,12 @@ class RegistrationSecond extends Component {
                     </Link>
                 </div>
                 <h1 className="registration_second_title">For perfomers</h1>
-                <h2 className="registration_second_post_title">Please write your information below<br/> if you want to be a helper</h2>
-                <Select name="Categories" value={this.state.categories} placeholder="Categories" styles={style} className="registration_second_input input select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler} />
-                <Select name="CitiesForWork" value={this.state.work_cities} placeholder="Cities convenient for work" styles={style} className="registration_second_input input select" isMulti options={options_cities} onChange={this.changeCitiesHandler}/>
+                <h2 className="registration_second_post_title">Please write your information below <br/> if you want to be a helper</h2>
+                <Select name="Categories" value={this.state.categories} placeholder="Categories" styles={style} className="registration_second_select" isMulti options={options_categorie} onChange={this.changeCategoriesHandler} /><br/>
+                <Select name="CitiesForWork" value={this.state.work_cities} placeholder="Cities convenient for work" styles={style} className="registration_second_select" isMulti options={options_cities} onChange={this.changeCitiesHandler} /><br/>
                 <input name="PricePerHour" value={this.state.price_per_hour} placeholder="Price per hour, NIS" className="registration_second_input input" onChange={this.changePriceHandler}/><br/>
-                <textarea name="AboutPerformer" value={this.state.description} placeholder="About you" className="registration_second_textarea" onChange={this.changeDescriptionHandler}></textarea>
+                <textarea name="AboutPerformer" value={this.state.description} placeholder="About you" className="registration_second_textarea" onChange={this.changeDescriptionHandler}></textarea><br/>
                 <button className="registration_second_sign_up" disabled={this.state.isActive} onClick={this.clickHandler}>Let's start</button>
-                {/* <textarea name="AboutTask" value={this.state.description}  placeholder="About task" className="textarea" onChange={this.changeDescriptionHandler}></textarea>
- */}
             </div>
         )
     }

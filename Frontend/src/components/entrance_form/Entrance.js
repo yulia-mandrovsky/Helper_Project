@@ -97,7 +97,7 @@ class Entrance extends Component {
                 </div>
                 <h2 className="entrance_post_title">Bring the best services to you</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input name="email" value={this.state.email} placeholder="Email" className="entrance_input input" onChange={this.handleUserInput} ></input>
+                    <input name="email" value={this.state.email} placeholder="Email" className="entrance_input input" onChange={this.handleUserInput} ></input><br/>
                     <input name="password" value={this.state.password} type="password" placeholder="Password" className="entrance_input input" onChange={this.handleUserInput}></input>
                     <div className='panel panel-default'>
                         <FormErrors formErrors={this.state.formErrors} />

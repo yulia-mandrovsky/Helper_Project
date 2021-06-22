@@ -35,8 +35,8 @@
     
     .registration_second_post_title {
         font-family: Roboto;
-        margin-top: 34px;
-        margin-bottom: 30px;
+        margin-top: 25px;
+        margin-bottom: 20px;
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
@@ -48,7 +48,7 @@
     .registration_second_input {
         height: 56px;
         width: 90%;
-        margin-top: 16px;
+        margin-top: 0px;
         background-color: #FFFFFF;
         border-radius: 12px;
         border: none;
@@ -57,7 +57,7 @@
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -71,12 +71,25 @@
         color: #8F9BB3;
     }
     
-    .select {
-        margin-left: 5%;
-        width: 90%;
+    .registration_second_select {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 90%;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .registration_second_textarea {
@@ -92,6 +105,7 @@
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -107,7 +121,7 @@
         font-style: normal;
         font-weight: 900;
         font-size: 15px;
-        line-height: 16px;
+        line-height: 20px;
         text-align: center;
         color: #FFFFFF;
     }
@@ -157,7 +171,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
-        line-height: 20px;
+        line-height: 26px;
         text-align: center;
         color: #8F9BB3;
     }
@@ -165,7 +179,7 @@
     .registration_second_input {
         height: 56px;
         width: 60%;
-        margin-top: 16px;
+        margin-top: 0px;
         background-color: #FFFFFF;
         border-radius: 12px;
         border: none;
@@ -174,7 +188,7 @@
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -188,13 +202,25 @@
         color: #8F9BB3;
     }
     
-    .select {
+    .registration_second_select {
         margin-left: auto;
-        margin-left: auto;
-        width: 60%;
+        margin-right: auto;
+        margin-top: 0;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 60%;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .registration_second_textarea {
@@ -209,7 +235,8 @@
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
-        line-height: 18px;
+        line-height: 20px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -275,7 +302,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 22px;
-        line-height: 20px;
+        line-height: 28px;
         text-align: center;
         color: #8F9BB3;
     }
@@ -283,7 +310,7 @@
     .registration_second_input {
         height: 56px;
         width: 55%;
-        margin-top: 16px;
+        margin-top: 0px;
         background-color: #FFFFFF;
         border-radius: 12px;
         border: none;
@@ -292,7 +319,7 @@
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -306,13 +333,25 @@
         color: #8F9BB3;
     }
     
-    .select {
+    .registration_second_select {
         margin-left: auto;
-        margin-left: auto;
-        width: 55%;
+        margin-right: auto;
+        margin-top: 0;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 55%;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .registration_second_textarea {
@@ -327,7 +366,8 @@
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
-        line-height: 18px;
+        line-height: 24px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -380,7 +420,7 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
-        font-size: 48px;
+        font-size: 40px;
         line-height: 32px;
         text-align: center;
         color: #222B45;
@@ -392,16 +432,16 @@
         margin-bottom: 30px;
         font-style: normal;
         font-weight: normal;
-        font-size: 26px;
-        line-height: 20px;
+        font-size: 22px;
+        line-height: 28px;
         text-align: center;
         color: #8F9BB3;
     }
     
     .registration_second_input {
         height: 56px;
-        width: 52%;
-        margin-top: 16px;
+        width: 45%;
+        margin-top: 0px;
         background-color: #FFFFFF;
         border-radius: 12px;
         border: none;
@@ -410,7 +450,7 @@
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -424,19 +464,31 @@
         color: #8F9BB3;
     }
     
-    .select {
+    .registration_second_select {
         margin-left: auto;
-        margin-left: auto;
-        width: 52%;
+        margin-right: auto;
+        margin-top: 0;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 45%;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .registration_second_textarea {
         padding: 10px;
         height: 200px;
-        width: 52%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -444,14 +496,15 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 15px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 24px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
     .registration_second_sign_up {
         height: 60px;
-        width: 52%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -460,7 +513,7 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;
@@ -494,7 +547,7 @@
     }
     
     .registration_second_title {
-        margin-top: 70px;
+        margin-top: 58px;
         box-sizing: border-box;
         font-family: Roboto;
         font-style: normal;
@@ -511,25 +564,25 @@
         margin-bottom: 40px;
         font-style: normal;
         font-weight: normal;
-        font-size: 28px;
-        line-height: 20px;
+        font-size: 24px;
+        line-height: 30px;
         text-align: center;
         color: #8F9BB3;
     }
     
     .registration_second_input {
         height: 56px;
-        width: 52%;
-        margin-top: 16px;
+        width: 45%;
+        margin-top: 0px;
         background-color: #FFFFFF;
         border-radius: 12px;
         border: none;
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -538,24 +591,36 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px; 
         color: #8F9BB3;
     }
     
-    .select {
+    .registration_second_select {
         margin-left: auto;
-        margin-left: auto;
-        width: 52%;
+        margin-right: auto;
+        margin-top: 0;
         border: none;
         padding-top: 10px;
+        padding-left: 8px;
         align-items: center;
+        height: 56px;
+        width: 45%;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        box-sizing: border-box;
     }
     
     .registration_second_textarea {
         padding: 10px;
         height: 200px;
-        width: 60%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -563,14 +628,15 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 24px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
     .registration_second_sign_up {
         height: 60px;
-        width: 52%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -579,7 +645,7 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;

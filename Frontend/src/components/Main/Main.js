@@ -41,21 +41,21 @@ class Main extends Component {
                         </svg>
                     </Link>
                 </div>
-                    <h2 className="small_title_main" >Make your choice</h2>
+                    <h2 className="small_title_header_main" >Make your choice</h2>
                 </header>
-                {this.state.user && <h1 className="hi_title">Hi, {this.state.user.username}!</h1>}
-                <h2 className="small_title title" >What do you want to do?</h2>
+                {this.state.user && <h1 className="hi_title_main">Hi, {this.state.user.username}!</h1>}
+                <h2 className="small_title_main" >What do you want to do?</h2>
                 <div className="categories">
-                    <Link to="/user-choice"  className="categorie">
-                        <div>
-                            <img src={PicnicBasket} alt="Picnic Basket" height="100px" />
-                            <h3>Find a helper</h3>
+                    <Link to="/user-choice"  className="choice_categorie">
+                        <div className="main_categorie_wrapper">
+                            <img src={PicnicBasket} alt="Picnic Basket"  className="main_categorie_image" />
+                            <h3 className="main_categorie_header">Find a helper</h3>
                         </div>
                     </Link>
-                    <Link to={this.state.user.is_performer === 1 ? "/tasks-filter" : "/home"}  className={this.state.user.is_performer === 0 ? 'disabled' : 'categorie'}>
-                        <div>
-                            <img src={VacuumCleaner} alt="Vacuum Cleaner" height="100px" />
-                            <h3>Find a task</h3>
+                    <Link to={this.state.user.is_performer === 1 ? "/tasks-filter" : "/home"}  className={this.state.user.is_performer === 0 ? 'disabled' : 'choice_categorie'}>
+                        <div className="main_categorie_wrapper">
+                            <img src={VacuumCleaner} alt="Vacuum Cleaner"  className="main_categorie_image" />
+                            <h3 className="main_categorie_header">Find a task</h3>
                         </div>
                     </Link>
                 </div>

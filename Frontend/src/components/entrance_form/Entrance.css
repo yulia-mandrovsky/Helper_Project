@@ -33,6 +33,7 @@ html {
         text-align: center;
         color: #222B45;
     }
+
     
     .entrance_post_title {
         font-family: Roboto;
@@ -58,7 +59,7 @@ html {
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -139,7 +140,7 @@ html {
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -220,7 +221,7 @@ html {
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
@@ -271,7 +272,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
-        font-size: 48px;
+        font-size: 40px;
         line-height: 32px;
         text-align: center;
         color: #222B45;
@@ -280,10 +281,10 @@ html {
     .entrance_post_title {
         font-family: Roboto;
         margin-top: 34px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         font-style: normal;
         font-weight: normal;
-        font-size: 26px;
+        font-size: 22px;
         line-height: 20px;
         text-align: center;
         color: #8F9BB3;
@@ -291,7 +292,7 @@ html {
     
     .entrance_input {
         height: 56px;
-        width: 52%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -301,14 +302,14 @@ html {
         font-weight: normal;
         font-size: 20px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
     
     .entrance_sign_in {
         height: 56px;
-        width: 55%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -317,7 +318,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;
@@ -346,7 +347,7 @@ html {
     }
     
     .entrance_title {
-        margin-top: 70px;
+        margin-top: 58px;
         box-sizing: border-box;
         font-family: Roboto;
         font-style: normal;
@@ -363,7 +364,7 @@ html {
         margin-bottom: 40px;
         font-style: normal;
         font-weight: normal;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 20px;
         text-align: center;
         color: #8F9BB3;
@@ -371,7 +372,7 @@ html {
     
     .entrance_input {
         height: 56px;
-        width: 52%;
+        width: 45%;
         margin-top: 16px;
         background-color: #FFFFFF;
         border-radius: 12px;
@@ -379,16 +380,16 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 18px;
-        padding-left: 10px;
+        padding-left: 18px;
         box-sizing: border-box;
     }
     
     
     .entrance_sign_in {
         height: 60px;
-        width: 52%;
+        width: 45%;
         margin-top: 45px;
         background-color: #007AFF;
         border: none;
@@ -397,7 +398,7 @@ html {
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 16px;
         text-align: center;
         color: #FFFFFF;

@@ -153,12 +153,12 @@ class RegistrationFirst extends Component {
                 </div>
                 <h1 className="registration_first_title">Sign Up</h1>
                 <h2 className="registration_first_post_title">Please fill the form below</h2>
-                <input name="username" value={this.state.username} placeholder="Full Name *" className="registration_first_input input" onChange={this.handleUserInput}></input>
-                <input name="email" value={this.state.email} placeholder="Email *" className="registration_first_input input" onChange={this.handleUserInput}></input>
-                <Select name="city" value={this.state.city}  placeholder="City" styles={style} className="registration_first_input input select_language select_registration_first" options={options_cities} onChange={this.changeCityHandler}/>
-                <input name="telephone" value={this.state.telephone} placeholder="Phone *" className="registration_first_input input" onChange={this.handleUserInput}></input>
-                <input name="numberID" value={this.state.numberID} placeholder="ID *" className="registration_first_input input" onChange={this.handleUserInput}></input>
-                <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="registration_first_input input select_language select_registration_first" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
+                <input name="username" value={this.state.username} placeholder="Full Name *" className="registration_first_input input" onChange={this.handleUserInput}></input><br/>
+                <input name="email" value={this.state.email} placeholder="Email *" className="registration_first_input input" onChange={this.handleUserInput}></input><br/>
+                <Select name="city" value={this.state.city}  placeholder="City" styles={style} className="select_language select_registration_first" options={options_cities} onChange={this.changeCityHandler}/><br/>
+                <input name="telephone" value={this.state.telephone} placeholder="Phone *" className="registration_first_input phone_input input" onChange={this.handleUserInput}></input><br/>
+                <input name="numberID" value={this.state.numberID} placeholder="ID *" className="registration_first_input input" onChange={this.handleUserInput}></input><br/>
+                <Select name="Languages" value={this.state.languages} placeholder="Languages" styles={style} className="select_language select_registration_first" isMulti options={options_language} onChange={this.changeLanguageHandler}/><br/>
                 <label className="registration_first_label">
                     <input className="checkbox_performer"
                         type="checkbox"
