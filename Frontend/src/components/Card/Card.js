@@ -37,7 +37,7 @@ class Card extends Component {
                 status: "archived"
             }
             console.log(this.props.task.task_id)
-            fetch(`process.env.REACT_APP_API_URL/tasks/${this.props.task.task_id}`, {
+            fetch(`${process.env.REACT_APP_API_URL}/tasks/${this.props.task.task_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json',
@@ -52,14 +52,9 @@ class Card extends Component {
                 console.log(data);
                 this.props.onStatusChange('archived')
             })
-        
     }
 
-    
-
     confirmToActiveHandler = (event) => {
-
-        // put status in task
         event.preventDefault();
         const body = {
             status: "active"

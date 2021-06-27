@@ -72,8 +72,8 @@ class SpecialistsFilter extends Component {
 
     render() {
         return (
-            <div className="list_wrapper">
-                <header className="header_wrapper">
+            <div className="specialists_list_wrapper">
+                <header className="specialists_header_wrapper">
                 <div className="arrow">
                     <Link to="/user-choice">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,18 +81,20 @@ class SpecialistsFilter extends Component {
                         </svg>
                     </Link>
                 </div>
-                    <h1 className="Title" >Find a specialist</h1>
+                    <h1 className="specialists_title" >Find a specialist</h1>
                 </header>
-                <Select isClearable name="FieldOfActivity" placeholder="Category" styles={style} className="registration_input input select" options={options_categorie} onChange={this.changeCategoriesHandler}/>
-                <Select isClearable name="Languages" placeholder="Language" styles={style} className="registration_input input select" options={options_language} onChange={this.changeLanguagesHandler}/>
-                <Select isClearable name="CitiesForWork" placeholder="Locations" styles={style} className="registration_input input select" options={options_cities} onChange={this.changeCitiesHandler}/>
-                <div className="input_filter_price">
-                    <input name="PriceFrom" placeholder="Price from, NIS" className="price_input" onChange={this.changePriceFromHandler}></input>
+                <Select isClearable name="FieldOfActivity" placeholder="Category" styles={style} className="specialists_list_select" options={options_categorie} onChange={this.changeCategoriesHandler}/><br/>
+                <Select isClearable name="Languages" placeholder="Language" styles={style} className="specialists_list_select" options={options_language} onChange={this.changeLanguagesHandler}/><br/>
+                <Select isClearable name="Languages" placeholder="Language" styles={style} className="specialists_list_select" options={options_language} onChange={this.changeLanguagesHandler}/><br/>
+                <Select isClearable name="Languages" placeholder="Language" styles={style} className="specialists_list_select" options={options_language} onChange={this.changeLanguagesHandler}/><br/>
+                <Select isClearable name="CitiesForWork" placeholder="Locations" styles={style} className="specialists_list_select" options={options_cities} onChange={this.changeCitiesHandler}/><br/>
+                <div className="specialists_list_input_wrapper">
+                    <input name="PriceFrom" placeholder="Price from, NIS" className="specialists_list_input" onChange={this.changePriceFromHandler}></input><br/>
                 </div>
-                <div className="input_filter_price">
-                    <input name="PriceUp" placeholder="Price up to, NIS" className="price_input" onChange={this.changePriceUpHandler}></input>
+                <div className="specialists_list_input_wrapper">
+                    <input name="PriceUp" placeholder="Price up to, NIS" className="specialists_list_input" onChange={this.changePriceUpHandler}></input><br/>
                 </div>
-                    <button className="apply_button" onClick={this.fetchFilteredHelpers}>Apply</button>
+                    <button className="specialists_list_apply_button" onClick={this.fetchFilteredHelpers}>Apply</button>
                 {this.state.helpers.map((helper) => <SpecialistSmallCard key={helper.id} helper={helper} />)}
 
             </div> 

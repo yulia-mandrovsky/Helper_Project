@@ -41,7 +41,7 @@ changeActiveStatus = (newStatus) => {
     render() {
         return (
             <div className="my_tasks_wrapper">
-                <header className="header_wrapper">
+                <header className="my_tasks_header_wrapper">
                     <div className="arrow">
                     <Link to="/add-task">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,10 +49,10 @@ changeActiveStatus = (newStatus) => {
                         </svg>
                     </Link>
                     </div>
-                    <h1 className="Title">My Tasks</h1>
+                    <h1 className="my_tasks_title">My Tasks</h1>
                     </header>
                     <Link to='/add-task'className="add_tasks_button">Add new task</Link>
-                    <div className="select-wrapper">
+                    <div className="my_tasks_select_wrapper">
                         <div onClick={() => {this.changeActiveStatus('ongoing')}} className={`select_block select_border ${this.state.active_status === 'ongoing' ? " active" : ''}`}>
                             <p>Draft</p>
                         </div>

@@ -1,103 +1,560 @@
-.specialist_card_wrapper {
-    width: 90%;
-    min-height: 220px;
-    background-color: #FFFFFF;
-    color: black;
-    border-radius: 12px;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
+/* XSmall */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .specialist_card_wrapper {
+        width: 90%;
+        min-height: 220px;
+        background-color: #FFFFFF;
+        color: black;
+        border-radius: 12px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .specialist_card_image_wrapper {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    .specialist_card_image {
+
+    }
+
+    .specialist_card_text_wrapper {
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .specialist_card_title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .specialist_card_title {
+        margin: 4px;
+        display: inline-block;
+        justify-content: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 18px;
+        color: #222B45;
+    }
+
+    .specialist_card_row {
+        min-height: 25px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #8F9BB3;
+    }
+
+    .helper_button_row {
+        justify-content: flex-end;
+    }
+
+    .helper_card_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 40%;
+        background: #FFCF00;
+        border-radius: 8px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
+    }
+
+    .description_row {
+        max-height: 80px;
+        height: auto;
+    }
+
+    .specialist_card_info {
+        width: 50%;
+        height: auto;
+        text-align: right;
+    }
+
+    .specialist_card_description {
+        overflow-y: auto;
+    }
+
+    .contacts_button {
+        margin-top: 0;
+        background-color: #FFCF00;
+    }
+
 }
 
-.image_wrapper {
-    width: 30%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 8px;
+/* Small */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .specialist_card_wrapper {
+        width: 60%;
+        min-height: 220px;
+        background-color: #FFFFFF;
+        color: black;
+        border-radius: 12px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .specialist_card_image_wrapper {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    .specialist_card_image {
+
+    }
+
+    .specialist_card_text_wrapper {
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .specialist_card_title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .specialist_card_title {
+        margin: 4px;
+        display: inline-block;
+        justify-content: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 18px;
+        color: #222B45;
+    }
+
+    .specialist_card_row {
+        min-height: 25px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #8F9BB3;
+    }
+
+    .helper_button_row {
+        justify-content: flex-end;
+    }
+
+    .helper_card_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 40%;
+        background: #FFCF00;
+        border-radius: 8px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
+    }
+
+    .description_row {
+        max-height: 80px;
+        height: auto;
+    }
+
+    .specialist_card_info {
+        width: 50%;
+        height: auto;
+        text-align: right;
+    }
+
+    .specialist_card_description {
+        overflow-y: auto;
+    }
+
+    .contacts_button {
+        margin-top: 0;
+        background-color: #FFCF00;
+    }
+
 }
 
-.text_wrapper {
-    width: 68%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 5px;
+/* Medium */
+@media screen and (min-width: 769px) and (max-width: 979px) {
+
+    .specialist_card_wrapper {
+        width: 55%;
+        min-height: 220px;
+        background-color: #FFFFFF;
+        color: black;
+        border-radius: 12px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .specialist_card_image_wrapper {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    .specialist_card_image {
+
+    }
+
+    .specialist_card_text_wrapper {
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .specialist_card_title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .specialist_card_title {
+        margin: 4px;
+        display: inline-block;
+        justify-content: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 18px;
+        color: #222B45;
+    }
+
+    .specialist_card_row {
+        min-height: 25px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #8F9BB3;
+    }
+
+    .helper_button_row {
+        justify-content: flex-end;
+    }
+
+    .helper_card_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 40%;
+        background: #FFCF00;
+        border-radius: 8px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
+    }
+
+    .description_row {
+        max-height: 80px;
+        height: auto;
+    }
+
+    .specialist_card_info {
+        width: 50%;
+        height: auto;
+        text-align: right;
+    }
+
+    .specialist_card_description {
+        overflow-y: auto;
+    }
+
+    .contacts_button {
+        margin-top: 0;
+        background-color: #FFCF00;
+    }
+
 }
 
-.title_wrapper {
-    display: flex;
-    justify-content: flex-start;
+/* Large */
+@media screen and (min-width: 980px) and (max-width: 1220px) {
+
+    .specialist_card_wrapper {
+        width: 45%;
+        min-height: 220px;
+        background-color: #FFFFFF;
+        color: black;
+        border-radius: 12px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .specialist_card_image_wrapper {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    .specialist_card_image {
+
+    }
+
+    .specialist_card_text_wrapper {
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .specialist_card_title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .specialist_card_title {
+        margin: 4px;
+        display: inline-block;
+        justify-content: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 18px;
+        color: #222B45;
+    }
+
+    .specialist_card_row {
+        min-height: 25px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #8F9BB3;
+    }
+
+    .helper_button_row {
+        justify-content: flex-end;
+    }
+
+    .helper_card_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 40%;
+        background: #FFCF00;
+        border-radius: 8px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
+    }
+
+    .description_row {
+        max-height: 80px;
+        height: auto;
+    }
+
+    .specialist_card_info {
+        width: 50%;
+        height: auto;
+        text-align: right;
+    }
+
+    .specialist_card_description {
+        overflow-y: auto;
+    }
+
+    .contacts_button {
+        margin-top: 0;
+        background-color: #FFCF00;
+    }
+
 }
 
-.card_title {
-    margin: 4px;
-    display: inline-block;
-    justify-content: flex-start;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 18px;
-    color: #222B45;
-}
+/* XLarge */
+@media screen and (min-width: 1221px) {
 
-.card_row {
-    min-height: 25px;
-    align-items: flex-start;
-    padding-bottom: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 16px;
-    color: #8F9BB3;
-}
+    .specialist_card_wrapper {
+        width: 45%;
+        min-height: 220px;
+        background-color: #FFFFFF;
+        color: black;
+        border-radius: 12px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
 
-.button_row {
-    justify-content: flex-end;
-}
+    .specialist_card_image_wrapper {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
 
-.helper_card_button {
-    margin-top: 15px;
-    height: 34px;
-    width: 40%;
-    background: #FFCF00;
-    border-radius: 8px;
-    border: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 16px;
-    text-align: center;
-    color: #FFFFFF;
-    filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
-}
+    .specialist_card_image {
 
-.description_row {
-    max-height: 80px;
-    height: auto;
-}
+    }
 
-.p_info {
-    width: 50%;
-    height: auto;
-    text-align: right;
-}
+    .specialist_card_text_wrapper {
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5px;
+    }
 
-.p_description {
-    overflow-y: auto;
-}
+    .specialist_card_title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
 
-.contacts_button {
-    margin-top: 0;
-    background-color: #FFCF00;
+    .specialist_card_title {
+        margin: 4px;
+        display: inline-block;
+        justify-content: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 18px;
+        color: #222B45;
+    }
+
+    .specialist_card_row {
+        min-height: 25px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #8F9BB3;
+    }
+
+    .helper_button_row {
+        justify-content: flex-end;
+    }
+
+    .helper_card_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 40%;
+        background: #FFCF00;
+        border-radius: 8px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        filter: drop-shadow(0px 7px 15px rgba(255, 207, 0, 0.18903));
+    }
+
+    .description_row {
+        max-height: 80px;
+        height: auto;
+    }
+
+    .specialist_card_info {
+        width: 50%;
+        height: auto;
+        text-align: right;
+    }
+
+    .specialist_card_description {
+        overflow-y: auto;
+    }
+
+    .contacts_button {
+        margin-top: 0;
+        background-color: #FFCF00;
+    }
+
 }
 

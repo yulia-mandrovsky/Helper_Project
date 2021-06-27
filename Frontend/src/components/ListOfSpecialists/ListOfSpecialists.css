@@ -4,7 +4,7 @@ html {
     background-color: #F0F3F8;
 }
 
-.list_wrapper {
+.specialists_list_wrapper {
     background-color: #F0F3F8;
     height: 100vh;
     box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
     padding-top: 0;
 }
 
-.header_wrapper {
+.specialists_header_wrapper {
     margin-top: 0;
     padding-top: 20px;
     background-color: #FFFFFF;
@@ -23,16 +23,36 @@ html {
     box-sizing: border-box;
 }
 
-.select {
-    margin-left: 5%;
-    width: 90%;
-    border: none;
-    padding-top: 10px;
-    align-items: center;
-    padding-left: 0;
+
+.specialists_title {
+
 }
 
-.price_input {
+.specialists_list_select {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding-top: 10px;
+    padding-left: 8px;
+    align-items: center;
+    height: 56px;
+    width: 90%;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    box-sizing: border-box;
+}
+
+.specialists_list_input_wrapper {
+
+}
+
+.specialists_list_input {
     height: 56px;
     width: 90%;
     margin-top: 16px;
@@ -49,9 +69,9 @@ html {
 }
 
 
-.apply_button {
+.specialists_list_apply_button {
     height: 56px;
-    width: 60%;
+    width: 90%;
     margin-top: 30px;
     background: #007AFF;
     color: #FFFFFF;

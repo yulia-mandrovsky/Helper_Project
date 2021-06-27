@@ -111,7 +111,7 @@ class AddTask extends Component {
                 <Select name="CityOfTask" value={this.state.city}  placeholder="Location *" styles={style} className="add_task_select" options={options_cities} onChange={this.changeCityHandler}/><br/>
                 <Select name="FrequencyOfServices" value={this.state.frequency}  placeholder="Frequency of Services" styles={style} className="add_task_select" options={options_frequency} onChange={this.changeFrequencyHandler}/><br/>
                 <input name="PricePerHour" type="number" value={this.state.price}  placeholder="Price per hour, NIS" className="add_task_input" onChange={this.changePriceHandler}></input><br/>
-                <input name="Phone" type="tel" value={this.state.phone}  placeholder="Phone *" className="add_task_input" onChange={this.changePhoneHandler}></input><br/>
+                <input name="Phone" type="tel" value={this.state.phone}  placeholder="Phone *" className="add_task_input add_task_phone_input" onChange={this.changePhoneHandler}></input><br/>
                 <textarea name="AboutTask" type="text" value={this.state.description} placeholder="About task" className="add_task_textarea" onChange={this.changeDescriptionHandler}></textarea><br/>
                 <button className="add_task_button" disabled={!isActive} onClick={isActive ? this.clickHandler : null}>Next</button>
             </div>
