@@ -89,7 +89,7 @@ class SpecialistsFilter extends Component {
                 <Select isClearable name="Languages" placeholder="Language" styles={style} className="specialists_list_select" options={options_language} onChange={this.changeLanguagesHandler}/><br/>
                 <Select isClearable name="CitiesForWork" placeholder="Locations" styles={style} className="specialists_list_select" options={options_cities} onChange={this.changeCitiesHandler}/><br/>
                 <div className="specialists_list_input_wrapper">
-                    <input name="PriceFrom" placeholder="Price from, NIS" className="specialists_list_input" onChange={this.changePriceFromHandler}></input><br/>
+                    <input name="PriceFrom" placeholder="Price from, NIS" className="specialists_list_input specialists_list_ptice_input" onChange={this.changePriceFromHandler}></input><br/>
                 </div>
                 <div className="specialists_list_input_wrapper">
                     <input name="PriceUp" placeholder="Price up to, NIS" className="specialists_list_input" onChange={this.changePriceUpHandler}></input><br/>
